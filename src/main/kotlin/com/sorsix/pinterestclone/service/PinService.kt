@@ -7,17 +7,17 @@ import org.springframework.stereotype.Service
 
 interface PinService {
 
-    fun findById(id : Long) : Pin
+    fun findById(id: Long): Pin
 
-    fun findAll() : List<Pin>
+    fun findAll(): List<Pin>
 
-    fun addPin(url : String, description : String, username: String) : Pin
+    fun addPin(url: String, description: String, username: String): Pin
 
-    fun deletePin(id : Long)
+    fun deletePin(id: Long)
 
-    fun updatePin(id : Long, description: String) : Pin
+    fun updatePin(id: Long, description: String): Pin
 
-    fun increaseFavourites(id : Long)
+    fun increaseFavourites(id: Long)
 
-    fun findAllByUserId(username : String) : List<Pin>
+    fun findAllByUserId(username: String): List<Pin>
 }

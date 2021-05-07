@@ -9,7 +9,7 @@ import com.sorsix.pinterestclone.service.UserService
 import org.springframework.stereotype.Service
 
 @Service
-class PinServiceImplementation(val repository : PinJpaRepository, val userService : UserService) : PinService {
+class PinServiceImplementation(val repository: PinJpaRepository, val userService: UserService) : PinService {
 
     override fun findById(id: Long): Pin {
         return repository.findById(id)
@@ -21,8 +21,8 @@ class PinServiceImplementation(val repository : PinJpaRepository, val userServic
     }
 
     override fun addPin(url: String, description: String, username: String): Pin {
-        val user : User = userService.findByUsername(username)
-        val newPin : Pin = Pin(0,url, description, 0, user)
+        val user: User = userService.findByUsername(username)
+        val newPin: Pin = Pin(0, url, description, 0, user)
         return repository.save(newPin)
     }
 
@@ -39,6 +39,6 @@ class PinServiceImplementation(val repository : PinJpaRepository, val userServic
     }
 
     override fun findAllByUserId(username: String): List<Pin> {
-       return repository.findAllByUserUsername(username)
+        return repository.findAllByUserUsername(username)
     }
 }

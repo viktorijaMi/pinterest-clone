@@ -17,6 +17,7 @@ class UserServiceImplementation(val repository: UserJpaRepository) : UserService
     }
 
     override fun findByUsername(username: String): User {
-        return repository.findById(username).orElseThrow { UserNotFoundException(String.format("User with username %s is not found", username)) }
+        return repository.findById(username)
+            .orElseThrow { UserNotFoundException(String.format("User with username %s is not found", username)) }
     }
 }

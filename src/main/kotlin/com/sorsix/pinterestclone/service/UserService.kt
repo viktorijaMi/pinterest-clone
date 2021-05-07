@@ -6,9 +6,9 @@ import org.springframework.stereotype.Service
 
 interface UserService {
 
-    fun login(username : String, password : String) : User
+    fun login(username: String, password: String): User
 
-    fun register(username : String, password : String, repeatedPassword : String) : User
+    fun register(username: String, password: String, repeatedPassword: String): User
 
-    fun findByUsername(username : String) : User
+    fun findByUsername(username: String): User
 }

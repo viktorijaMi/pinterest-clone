@@ -15,8 +15,8 @@ import javax.persistence.*
 data class User(
 
     @Id
-    private val username: String,
+    val username: String,
 
-    private val password: String,
+    val password: String,
 
     )

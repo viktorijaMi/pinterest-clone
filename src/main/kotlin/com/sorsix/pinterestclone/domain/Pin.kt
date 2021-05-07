@@ -15,13 +15,13 @@ data class Pin(
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private val id: Long,
+    val id: Long,
 
-    private val url: String,
+    val url: String,
 
-    private val description: String,
+    val description: String,
 
-    private val favorites: Int,
+    val favorites: Int,
 
     @ManyToOne
     private val user: User,

@@ -6,6 +6,7 @@ import com.sorsix.pinterestclone.exceptions.PinNotFoundException
 import com.sorsix.pinterestclone.repository.PinJpaRepository
 import com.sorsix.pinterestclone.service.PinService
 import com.sorsix.pinterestclone.service.UserService
+import com.sorsix.pinterestclone.web.dto.PinDto
 import org.springframework.stereotype.Service
 
 @Service
@@ -26,12 +27,18 @@ class PinServiceImplementation(val repository: PinJpaRepository, val userService
         return repository.save(newPin)
     }
 
+    override fun save(pinDto: PinDto): Pin {
+        val user: User = userService.findByUsername(pinDto.username)
+        val newPin: Pin = Pin(0, pinDto.url, pinDto.description, 0, user)
+        return repository.save(newPin)
+    }
+
     override fun deletePin(id: Long) {
         repository.deleteById(id)
     }
 
-    override fun updatePin(id: Long, description: String): Pin {
-        return repository.updatePin(id, description)
+    override fun updatePin(id: Long, description: String) {
+        this.repository.updatePin(id, description)
     }
 
     override fun increaseFavourites(id: Long) {

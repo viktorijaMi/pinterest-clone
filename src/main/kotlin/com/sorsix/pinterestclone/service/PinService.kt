@@ -2,6 +2,7 @@ package com.sorsix.pinterestclone.service
 
 import com.sorsix.pinterestclone.domain.Pin
 import com.sorsix.pinterestclone.domain.User
+import com.sorsix.pinterestclone.web.dto.PinDto
 import org.springframework.stereotype.Service
 
 
@@ -13,9 +14,11 @@ interface PinService {
 
     fun addPin(url: String, description: String, username: String): Pin
 
+    fun save(pinDto: PinDto): Pin
+
     fun deletePin(id: Long)
 
-    fun updatePin(id: Long, description: String): Pin
+    fun updatePin(id: Long, description: String)
 
     fun increaseFavourites(id: Long)
 

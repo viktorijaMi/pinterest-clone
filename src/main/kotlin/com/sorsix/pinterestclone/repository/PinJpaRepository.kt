@@ -4,18 +4,23 @@ import com.sorsix.pinterestclone.domain.Pin
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.data.jpa.repository.Modifying
 import org.springframework.data.jpa.repository.Query
+import org.springframework.data.repository.query.Param
 import org.springframework.stereotype.Repository
+import java.util.*
+import javax.transaction.Transactional
 
 @Repository
 interface PinJpaRepository : JpaRepository<Pin, Long> {
 
+    @Transactional
     @Modifying
     @Query("update Pin p set p.description = :description where p.id = :id")
-    fun updatePin(id: Long, description: String): Pin
+    fun updatePin(id: Long, description: String)
 
+    @Transactional
     @Modifying
-    @Query("update Pin p set p.favorites = p.favorites + 1 where p.id = :id")
-    fun updateFavorites(id: Long)
+    @Query("update Pin p set p.favorites = p.favorites+1 where p.id = :id")
+    fun updateFavorites(@Param("id") id: Long)
 
     fun findAllByUserUsername(username: String): List<Pin>
 

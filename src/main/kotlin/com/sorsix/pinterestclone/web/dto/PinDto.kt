@@ -7,8 +7,5 @@ data class PinDto(
 
     val description: String,
 
-    val favorites: Int,
-
-    val username: String,
-
+    val username: String
     )

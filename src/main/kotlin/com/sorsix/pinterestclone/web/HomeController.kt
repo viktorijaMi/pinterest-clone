@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.*
 
 
 @RestController
-@RequestMapping("/api/home")
+@RequestMapping("/api")
 class HomeController(
     val pinService: PinService,
     val userService: UserService
 ) {
 
-    @GetMapping
+    @GetMapping("/home")
     fun listAllPins(): List<Pin> {
         return pinService.findAll();
     }

@@ -12,15 +12,11 @@ interface PinService {
 
     fun findAll(): List<Pin>
 
-    fun addPin(url: String, description: String, username: String): Pin
+    fun findAllByUserId(username: String): List<Pin>
 
-    fun save(pinDto: PinDto): Pin
+    fun savePin(pinDto: PinDto): Pin
 
     fun deletePin(id: Long)
 
     fun updatePin(id: Long, description: String)
-
-    fun increaseFavourites(id: Long)
-
-    fun findAllByUserId(username: String): List<Pin>
 }

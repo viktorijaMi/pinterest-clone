@@ -12,24 +12,22 @@ import org.springframework.stereotype.Service
 @Service
 class PinServiceImplementation(val repository: PinJpaRepository, val userService: UserService) : PinService {
 
+    override fun findAll(): List<Pin> {
+        return repository.findAll()
+    }
+
     override fun findById(id: Long): Pin {
         return repository.findById(id)
             .orElseThrow { PinNotFoundException(String.format("Pin with id %d is not found", id)) }
     }
 
-    override fun findAll(): List<Pin> {
-        return repository.findAll()
+    override fun findAllByUserId(username: String): List<Pin> {
+        return repository.findAllByUserUsername(username)
     }
 
-    override fun addPin(url: String, description: String, username: String): Pin {
-        val user: User = userService.findByUsername(username)
-        val newPin: Pin = Pin(0, url, description, 0, user)
-        return repository.save(newPin)
-    }
-
-    override fun save(pinDto: PinDto): Pin {
+    override fun savePin(pinDto: PinDto): Pin {
         val user: User = userService.findByUsername(pinDto.username)
-        val newPin: Pin = Pin(0, pinDto.url, pinDto.description, 0, user)
+        val newPin: Pin = Pin(0, pinDto.url, pinDto.description, user)
         return repository.save(newPin)
     }
 
@@ -39,13 +37,5 @@ class PinServiceImplementation(val repository: PinJpaRepository, val userService
 
     override fun updatePin(id: Long, description: String) {
         this.repository.updatePin(id, description)
-    }
-
-    override fun increaseFavourites(id: Long) {
-        repository.updateFavorites(id)
-    }
-
-    override fun findAllByUserId(username: String): List<Pin> {
-        return repository.findAllByUserUsername(username)
     }
 }

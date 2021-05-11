@@ -17,11 +17,6 @@ interface PinJpaRepository : JpaRepository<Pin, Long> {
     @Query("update Pin p set p.description = :description where p.id = :id")
     fun updatePin(id: Long, description: String)
 
-    @Transactional
-    @Modifying
-    @Query("update Pin p set p.favorites = p.favorites+1 where p.id = :id")
-    fun updateFavorites(@Param("id") id: Long)
-
     fun findAllByUserUsername(username: String): List<Pin>
 
 }

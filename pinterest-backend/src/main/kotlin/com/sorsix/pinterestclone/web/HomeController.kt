@@ -42,7 +42,7 @@ class HomeController(
         return this.pinService.increaseFavourites(id)
     }
 
-    @PostMapping("/delete/{id}")
+    @DeleteMapping("/delete/{id}")
     fun deletePin(@PathVariable id: Long) {
         this.pinService.deletePin(id)
     }

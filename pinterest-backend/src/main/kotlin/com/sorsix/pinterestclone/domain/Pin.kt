@@ -14,6 +14,6 @@ data class Pin(
     var description: String,
 
     @ManyToOne
-    private var user: User,
-
+    var user: User,
+    //TODO: change the user variable name
     )

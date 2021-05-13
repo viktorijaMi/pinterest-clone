@@ -18,4 +18,6 @@ interface FavoriteService {
     fun increaseFavorites(id: Long)
 
     fun decreaseFavorites(id: Long)
+
+    fun deleteFavoriteByPin(pinId: Long)
 }

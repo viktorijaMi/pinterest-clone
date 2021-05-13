@@ -66,4 +66,9 @@ class FavoriteServiceImplementation(
     override fun decreaseFavorites(id: Long) {
         this.repository.decreaseFavorites(id)
     }
+
+    override fun deleteFavoriteByPin(pinId: Long) {
+        val favorite: Favorite = this.findByPinId(pinId)
+        this.repository.deleteById(favorite.id)
+    }
 }

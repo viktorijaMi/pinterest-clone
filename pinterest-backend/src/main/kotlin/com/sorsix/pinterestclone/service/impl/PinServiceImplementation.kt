@@ -1,5 +1,6 @@
 package com.sorsix.pinterestclone.service.impl
 
+import com.sorsix.pinterestclone.domain.Favorite
 import com.sorsix.pinterestclone.domain.Pin
 import com.sorsix.pinterestclone.domain.User
 import com.sorsix.pinterestclone.exceptions.PinNotFoundException
@@ -27,12 +28,13 @@ class PinServiceImplementation(
     }
 
     override fun findAllByUserId(username: String): List<Pin> {
-        return repository.findAllByUserUsername(username)
+        return repository.findAllByCreatedByUsername(username)
     }
 
     override fun savePin(pinDto: PinDto): Pin {
         val user: User = userService.findByUsername(pinDto.username)
-        val newPin = Pin(0, pinDto.url, pinDto.description, user)
+        val favorites: MutableList<Favorite> = mutableListOf()
+        val newPin = Pin(0, pinDto.url, pinDto.description, 0, favorites, user)
         return repository.save(newPin)
     }
 
@@ -43,5 +45,19 @@ class PinServiceImplementation(
 
     override fun updatePin(id: Long, description: String) {
         this.repository.updatePin(id, description)
+    }
+
+    override fun removeFavorite(pinId: Long, favorite: Favorite) {
+        val pin: Pin = this.findById(pinId)
+        pin.favorites.remove(favorite)
+        pin.numFavorites--
+        this.repository.save(pin)
+    }
+
+    override fun addFavorite(pinId: Long, favorite: Favorite) {
+        val pin: Pin = this.findById(pinId)
+        pin.favorites.add(favorite)
+        pin.numFavorites++
+        this.repository.save(pin)
     }
 }

@@ -1,5 +1,6 @@
 package com.sorsix.pinterestclone.service
 
+import com.sorsix.pinterestclone.domain.Favorite
 import com.sorsix.pinterestclone.domain.Pin
 import com.sorsix.pinterestclone.domain.User
 import com.sorsix.pinterestclone.web.dto.PinDto
@@ -19,4 +20,8 @@ interface PinService {
     fun deletePin(id: Long)
 
     fun updatePin(id: Long, description: String)
+
+    fun removeFavorite(pinId: Long, favorite: Favorite)
+
+    fun addFavorite(pinId: Long, favorite: Favorite)
 }

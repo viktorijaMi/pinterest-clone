@@ -17,6 +17,6 @@ interface PinJpaRepository : JpaRepository<Pin, Long> {
     @Query("update Pin p set p.description = :description where p.id = :id")
     fun updatePin(id: Long, description: String)
 
-    fun findAllByUserUsername(username: String): List<Pin>
+    fun findAllByCreatedByUsername(username: String): List<Pin>
 
 }

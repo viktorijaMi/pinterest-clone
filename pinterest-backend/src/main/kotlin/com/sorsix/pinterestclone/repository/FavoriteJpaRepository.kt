@@ -12,17 +12,19 @@ import javax.transaction.Transactional
 @Repository
 interface FavoriteJpaRepository : JpaRepository<Favorite, Long> {
 
-    fun findAllByPinId(id: Long) : List<Favorite>
+    fun findAllByPinId(id: Long): List<Favorite>
 
-    fun findByPinId(pinId: Long) : Optional<Favorite>
+    fun findByPinId(pinId: Long): Optional<Favorite>
 
-    @Transactional
-    @Modifying
-    @Query("update Favorite f set f.numFavorites = f.numFavorites+1 where f.id = :id")
-    fun increaseFavorites(@Param("id") id: Long)
+    fun findByPinIdAndUserUsername(pinId: Long, username: String): Optional<Favorite>
 
-    @Transactional
-    @Modifying
-    @Query("update Favorite f set f.numFavorites = f.numFavorites-1 where f.id = :id")
-    fun decreaseFavorites(@Param("id") id: Long)
+//    @Transactional
+//    @Modifying
+//    @Query("update Favorite f set f.numFavorites = f.numFavorites+1 where f.id = :id")
+//    fun increaseFavorites(@Param("id") id: Long)
+//
+//    @Transactional
+//    @Modifying
+//    @Query("update Favorite f set f.numFavorites = f.numFavorites-1 where f.id = :id")
+//    fun decreaseFavorites(@Param("id") id: Long)
 }

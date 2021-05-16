@@ -1,6 +1,7 @@
 package com.sorsix.pinterestclone.service.impl
 
 import com.sorsix.pinterestclone.domain.Favorite
+import com.sorsix.pinterestclone.domain.FavoriteId
 import com.sorsix.pinterestclone.domain.Pin
 import com.sorsix.pinterestclone.domain.User
 import com.sorsix.pinterestclone.exceptions.FavoriteNotFoundException
@@ -24,7 +25,7 @@ class FavoriteServiceImplementation(
 
     override fun findByPinId(pinId: Long): Favorite {
         return this.repository.findByPinId(pinId)
-                .orElseThrow { FavoriteNotFoundException(String.format("Favorite with pinId %d not found", pinId)) }
+            .orElseThrow { FavoriteNotFoundException(String.format("Favorite with pinId %d not found", pinId)) }
     }
 
     override fun findAllByPinId(id: Long): List<Favorite> {
@@ -35,40 +36,25 @@ class FavoriteServiceImplementation(
         return this.repository.findAll()
     }
 
-    override fun updateFavorite(pinId: Long, username: String): Favorite {
-        val pin: Pin = this.pinService.findById(pinId)
-        val user: User = this.userService.findByUsername(username)
+    override fun updateFavorite(pinId: Long, username: String): Favorite? {
+        val favorite: Favorite
 
-        // update favorite
-        if (this.findAll().stream().anyMatch { item -> item.pin.id== pinId }) {
-            val favorite: Favorite = this.findByPinId(pinId)
-            if (favorite.users.contains(user) && favorite.numFavorites > 0) {
-                this.decreaseFavorites(favorite.id)
-                favorite.users.remove(user)
-            } else {
-                this.increaseFavorites(favorite.id)
-                favorite.users.add(user)
-            }
-            return this.repository.save(favorite)
+        if (repository.findByPinIdAndUserUsername(pinId, username).isPresent) {
+            favorite = repository.findByPinIdAndUserUsername(pinId, username).get()
+            this.pinService.removeFavorite(pinId, favorite)
+            this.repository.delete(favorite)
+        } else {
+            val pin: Pin = this.pinService.findById(pinId)
+            val user: User = this.userService.findByUsername(username)
+            favorite = Favorite(FavoriteId(pinId, username), pin, user)
+            this.pinService.addFavorite(pinId, favorite)
+            this.repository.save(favorite)
         }
-        // create favorite
-        else {
-            val users: MutableList<User> = mutableListOf(user)
-            val favorite: Favorite = Favorite(0, 1, pin, users)
-            return this.repository.save(favorite)
-        }
-    }
-
-    override fun increaseFavorites(id: Long) {
-        this.repository.increaseFavorites(id)
-    }
-
-    override fun decreaseFavorites(id: Long) {
-        this.repository.decreaseFavorites(id)
+        return favorite
     }
 
     override fun deleteFavoriteByPin(pinId: Long) {
         val favorite: Favorite = this.findByPinId(pinId)
-        this.repository.deleteById(favorite.id)
+        this.repository.delete(favorite)
     }
 }

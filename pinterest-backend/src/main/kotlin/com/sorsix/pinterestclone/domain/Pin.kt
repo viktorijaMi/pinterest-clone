@@ -1,8 +1,11 @@
 package com.sorsix.pinterestclone.domain
 
+import com.fasterxml.jackson.annotation.JsonIgnore
+import java.io.Serializable
 import javax.persistence.*
 
 @Entity
+@Embeddable
 data class Pin(
 
     @Id
@@ -13,7 +16,11 @@ data class Pin(
 
     var description: String,
 
+    var numFavorites: Int,
+
+    @OneToMany(fetch = FetchType.EAGER, cascade = arrayOf(CascadeType.ALL), orphanRemoval = true)
+    var favorites: MutableList<Favorite>,
+
     @ManyToOne
-    var user: User,
-    //TODO: change the user variable name
-    )
+    var createdBy: User,
+)

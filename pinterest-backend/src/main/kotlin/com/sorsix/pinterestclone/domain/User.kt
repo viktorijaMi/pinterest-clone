@@ -6,8 +6,9 @@ import javax.persistence.*
 
 
 @Entity
-@Table(name="users")
-data class User (
+@Table(name = "users")
+@Embeddable
+data class User(
     @Id
     var username: String,
 

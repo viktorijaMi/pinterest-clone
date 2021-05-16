@@ -5,19 +5,15 @@ import java.util.*
 
 interface FavoriteService {
 
-    fun findById(id: Long) : Favorite
+    fun findById(id: Long): Favorite
 
-    fun findByPinId(pinId: Long) : Favorite
+    fun findByPinId(pinId: Long): Favorite
 
     fun findAllByPinId(id: Long): List<Favorite>
 
-    fun findAll() : List<Favorite>
+    fun findAll(): List<Favorite>
 
-    fun updateFavorite(pinId: Long, username: String) : Favorite
-
-    fun increaseFavorites(id: Long)
-
-    fun decreaseFavorites(id: Long)
+    fun updateFavorite(pinId: Long, username: String): Favorite?
 
     fun deleteFavoriteByPin(pinId: Long)
 }

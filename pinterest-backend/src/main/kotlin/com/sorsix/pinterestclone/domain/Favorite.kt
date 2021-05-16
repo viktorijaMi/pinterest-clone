@@ -1,19 +1,21 @@
 package com.sorsix.pinterestclone.domain
 
+import com.fasterxml.jackson.annotation.JsonIgnore
 import javax.persistence.*
 
 @Entity
 data class Favorite(
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    var id: Long,
+    @EmbeddedId
+    var id: FavoriteId,
 
-    var numFavorites: Int,
-
+    @JsonIgnore
     @ManyToOne
+    @JoinColumn(name = "pin_id")
+    @MapsId("pin_id")
     var pin: Pin,
 
-    @OneToMany
-    var users: MutableList<User>
+    @ManyToOne
+    @MapsId("user_username")
+    var user: User
 
 )

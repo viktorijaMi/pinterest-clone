@@ -16,10 +16,8 @@ class FavoriteController(
 ) {
 
     @GetMapping("/{id}")
-    fun getFavoriteById(@PathVariable id: Long) : ResponseEntity<Favorite> {
-        return this.favoriteService.findByPinId(id).let {
-            ResponseEntity.ok(it)
-        }
+    fun getAllByPinId(@PathVariable id: Long): List<Favorite> {
+        return this.favoriteService.findAllByPinId(id)
     }
 
     /**

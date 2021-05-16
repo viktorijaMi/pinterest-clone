@@ -16,7 +16,7 @@ class PinController(
     val favoriteService: FavoriteService
 ) {
 
-    @GetMapping("/home")
+    @GetMapping("/pins")
     fun listAllPins(): List<Pin> {
         return pinService.findAll();
     }
@@ -41,8 +41,10 @@ class PinController(
     }
 
     @PostMapping("/favorites/{pinId}")
-    fun updateFavorite(@PathVariable pinId: Long,
-                       @RequestParam username: String) {
+    fun updateFavorite(
+        @PathVariable pinId: Long,
+        @RequestParam username: String
+    ) {
         this.favoriteService.updateFavorite(pinId, username)
     }
 

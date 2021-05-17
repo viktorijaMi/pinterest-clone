@@ -18,7 +18,7 @@ data class Pin(
 
     var numFavorites: Int,
 
-    @OneToMany(fetch = FetchType.EAGER, cascade = arrayOf(CascadeType.ALL), orphanRemoval = true)
+    @OneToMany(fetch = FetchType.EAGER, cascade = arrayOf(CascadeType.ALL), orphanRemoval = true, mappedBy = "pin")
     var favorites: MutableList<Favorite>,
 
     @ManyToOne

@@ -1,5 +1,16 @@
-img {
-  width:  200px;
-  height: 200px;
-  object-fit: cover;
+/* *, *:before, *:after {box-sizing:  border-box !important;}
+
+
+.row {
+ column-width: 18rem;
+}
+
+.item {
+ display: inline-block;
+ padding:  .25rem;
+ width:  100%;
+} */
+
+.grid-item {
+  margin-bottom: 10px;
 }

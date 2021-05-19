@@ -9,7 +9,8 @@ import { PinDetailsComponent } from './pin-details/pin-details.component';
 import { AddPinComponent } from './add-pin/add-pin.component';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxMasonryModule } from 'ngx-masonry';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,9 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     RouterModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    NgxMasonryModule
   ],
   providers: [],
   bootstrap: [AppComponent]

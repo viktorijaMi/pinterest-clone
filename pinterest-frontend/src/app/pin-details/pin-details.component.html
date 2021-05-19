@@ -1,1 +1,22 @@
-<p>pin-details works!</p>
+<!-- <div class="well">
+  <img src="{{ pin.url }}" alt="">
+  <h3>{{ pin.description }}</h3>
+  <p>{{ pin.createdBy.username }}</p>
+  <span class="glyphicon glyphicon-star" aria-hidden="true" (click)="onFavorite()"></span>
+  <span class="glyphicon glyphicon-hourglass c-hide" aria-hidden="true"></span>
+  <p>{{ pin.numFavorites }}</p>
+  <button type="button" (click)="onDelete()">DELETE</button>
+  <button type="button" (click)="onFavorite()">FAVORITE</button>
+</div> -->
+
+<div class="d-md-flex flex-md-equal my-md-3">
+  <img class="bd-placeholder-img card-img-top" src="{{ pin.url }}" alt="">
+  <div class="card-body">
+    <h5 class="card-title">{{ pin.description }}</h5>
+    <p class="card-text">{{ pin.createdBy.username }}</p>
+    <button type="button" (click)="onFavorite()"><i class="fa fa-lg fa-star" (click)="onFavorite()"></i></button>
+    <span class="glyphicon glyphicon-hourglass c-hide" aria-hidden="true"></span>
+    <p>{{ pin.numFavorites }}</p>
+    <button type="button" (click)="onDelete()">DELETE</button>
+  </div>
+</div>

@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
-import { PinModel } from '../model/pin';
+import { ActivatedRoute } from '@angular/router';
 import { PinService } from '../services/pin.service';
-import { map, mergeMap, switchMap } from 'rxjs/operators';
-import { PinDTO } from '../model/pinDto';
-import { of } from 'rxjs';
+import { Subject } from 'rxjs';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-add-pin',
@@ -13,24 +11,29 @@ import { of } from 'rxjs';
 })
 export class AddPinComponent implements OnInit {
 
-  pin : PinModel | undefined;
-  pinDto: PinDTO | any;
+  items = this.service.getAllPins();
 
-  constructor(private service: PinService, private route: ActivatedRoute) { }
+  checkoutForm = this.formBuilder.group({
+    description: '',
+    url: '',
+    username: ''
+  });
+
+  reload = new Subject<boolean>();
+
+  constructor(private service: PinService,
+    private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
   }
 
   onSubmit() {
-    console.log("on submit")
-    this.route.params.subscribe((params) => {
-      this.pinDto = {
-        "description" : params['description'],
-        "url" : params['url'],
-        "username" : params['username']
+    this.service.addPin(this.checkoutForm.value['description'], this.checkoutForm.value['url'], this.checkoutForm.value['username']).subscribe(
+      (result) => {
+        console.log("Added pin ", result);
+        this.reload.next(false);
       }
-    })
-    console.log("pinDto: ", this.pinDto)
-    this.service.addPin(this.pinDto)
+    )
+    this.checkoutForm.reset();
   }
 }

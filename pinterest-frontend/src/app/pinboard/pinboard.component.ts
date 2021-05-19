@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap, Params } from '@angular/router';
+import { ActivatedRoute, ParamMap, Params, Router } from '@angular/router';
 import { PinService } from '../services/pin.service';
 import { PinModel } from '../model/pin';
 import { Subject } from 'rxjs';
-import { mergeMap, switchMap, tap, map } from "rxjs/operators";
+import { FavoriteModel } from '../model/favorite';
+
 @Component({
   selector: 'app-pinboard',
   templateUrl: './pinboard.component.html',
@@ -11,25 +12,24 @@ import { mergeMap, switchMap, tap, map } from "rxjs/operators";
 })
 export class PinboardComponent implements OnInit {
 
-  pins : PinModel[] = []
+  pins: PinModel[] = []
+  favorite: FavoriteModel | undefined;
+  delete = new Subject<number>();
+  reload = new Subject<boolean>();
 
-
-  constructor(private service: PinService, private route: ActivatedRoute) { }
-
-
-  ngOnInit(): void {
-    // this.route.params.pipe(
-    //   switchMap(id => this.service.getAllPins())
-    // ).subscribe(
-    //   result => this.pins = result
-    // )
-
-    console.log("in ng on init")
-     this.service.getAllPins()
-      .subscribe((result: PinModel[]) => {
-          console.log('Result ', result);
-          this.pins = result;
-      });
+  constructor(private service: PinService, private route: ActivatedRoute, private router: Router) {
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
   }
 
+  ngOnInit(): void {
+    this.loadAllPins()
+  }
+
+  loadAllPins() {
+    this.service.getAllPins()
+      .subscribe((result: PinModel[]) => {
+        console.log('Result ', result);
+        this.pins = result;
+      });
+    }
 }

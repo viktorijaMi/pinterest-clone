@@ -18,6 +18,7 @@ class FavoriteServiceImplementation(
     val userService: UserService,
     val pinService: PinService
 ) : FavoriteService {
+
     override fun findById(id: Long): Favorite {
         return this.repository.findById(id)
             .orElseThrow { FavoriteNotFoundException(String.format("Favorite with id %d not found", id)) }

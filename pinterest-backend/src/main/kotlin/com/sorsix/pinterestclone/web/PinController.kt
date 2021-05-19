@@ -10,13 +10,13 @@ import org.springframework.web.bind.annotation.*
 
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/pins")
 class PinController(
     val pinService: PinService,
     val favoriteService: FavoriteService
 ) {
 
-    @GetMapping("/pins")
+    @GetMapping()
     fun listAllPins(): List<Pin> {
         return pinService.findAll();
     }
@@ -40,18 +40,12 @@ class PinController(
         this.pinService.updatePin(id, description)
     }
 
-    @PostMapping("/favorites/{pinId}")
-    fun updateFavorite(
-        @PathVariable pinId: Long,
-        @RequestParam username: String
-    ) {
-        this.favoriteService.updateFavorite(pinId, username)
-    }
-
     @DeleteMapping("/delete/{id}")
     fun deletePin(@PathVariable id: Long) {
         this.pinService.deletePin(id)
     }
+
+
 
     /**
      * Error handlers

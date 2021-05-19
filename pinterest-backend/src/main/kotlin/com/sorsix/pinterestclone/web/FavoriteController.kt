@@ -9,7 +9,7 @@ import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 
 @RestController
-@RequestMapping("/api/favorite")
+@RequestMapping("/api/favorites")
 class FavoriteController(
     val pinService: PinService,
     val favoriteService: FavoriteService
@@ -18,6 +18,14 @@ class FavoriteController(
     @GetMapping("/{id}")
     fun getAllByPinId(@PathVariable id: Long): List<Favorite> {
         return this.favoriteService.findAllByPinId(id)
+    }
+
+    @PostMapping("/{pinId}")
+    fun updateFavorite(
+        @PathVariable pinId: Long,
+        @RequestParam username: String
+    ) {
+        this.favoriteService.updateFavorite(pinId, username)
     }
 
     /**

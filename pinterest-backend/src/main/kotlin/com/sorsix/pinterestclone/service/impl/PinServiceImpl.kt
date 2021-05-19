@@ -12,7 +12,7 @@ import com.sorsix.pinterestclone.web.dto.PinDto
 import org.springframework.stereotype.Service
 
 @Service
-class PinServiceImplementation(
+class PinServiceImpl(
     val repository: PinJpaRepository,
     val userService: UserService,
 //    val favoriteService: FavoriteService

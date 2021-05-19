@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service
 import java.util.*
 
 @Service
-class FavoriteServiceImplementation(
+class FavoriteServiceImpl(
     val repository: FavoriteJpaRepository,
     val userService: UserService,
     val pinService: PinService

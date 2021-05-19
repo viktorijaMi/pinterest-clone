@@ -1,12 +1,11 @@
 package com.sorsix.pinterestclone.service
 
 import com.sorsix.pinterestclone.domain.User
+import org.springframework.security.core.userdetails.UserDetailsService
 import org.springframework.stereotype.Service
 
 
-interface UserService {
-
-    fun login(username: String, password: String): User
+interface UserService : UserDetailsService{
 
     fun register(username: String, password: String, repeatedPassword: String): User
 

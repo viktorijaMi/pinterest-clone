@@ -7,11 +7,12 @@ import com.sorsix.pinterestclone.exceptions.UserNotFoundException
 import com.sorsix.pinterestclone.exceptions.UsernameAlreadyExistsException
 import com.sorsix.pinterestclone.repository.UserJpaRepository
 import com.sorsix.pinterestclone.service.UserService
+import org.springframework.security.core.Authentication
+import org.springframework.security.core.context.SecurityContextHolder
 import org.springframework.security.core.userdetails.UserDetails
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
 import org.springframework.security.crypto.password.PasswordEncoder
-import org.springframework.security.oauth2.provider.OAuth2Authentication
 import org.springframework.stereotype.Service
+
 
 @Service
 class UserServiceImpl(
@@ -19,8 +20,8 @@ class UserServiceImpl(
     val passwordEncoder: PasswordEncoder
 ) : UserService {
 
-    override fun register(username: String, password: String, repeatedPassword: String): User {
-        if (username.isEmpty() || password.isEmpty()) {
+    override fun register(username: String?, password: String?, repeatedPassword: String?): User {
+        if (username == null || password == null) {
             throw InvalidArgumentsException(String.format("Invalid username or password!"))
         }
         if (!password.equals(repeatedPassword))
@@ -36,8 +37,14 @@ class UserServiceImpl(
             .orElseThrow { UserNotFoundException(String.format("User with username %s is not found", username)) }
     }
 
-    override fun getAuthenticatedUser(auth2User: OAuth2Authentication): User {
-        return findByUsername(auth2User.name)
+    override fun getAuthenticatedUser(): User? {
+//        return findByUsername(auth2User.name)
+        val authentication: Authentication = SecurityContextHolder.getContext().authentication
+        val currentPrincipalName: String = authentication.getName()
+        if (currentPrincipalName == "anonymousUser")
+            return null
+        return this.findByUsername(currentPrincipalName)
+
     }
 
     override fun saveAuthenticatedUser(user: User): User {

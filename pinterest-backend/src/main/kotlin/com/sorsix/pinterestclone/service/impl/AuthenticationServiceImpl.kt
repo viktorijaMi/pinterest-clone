@@ -18,6 +18,6 @@ class AuthenticationServiceImpl(val repository: UserJpaRepository) : Authenticat
             password
         ).orElseThrow {
             InvalidCredentialsException(String.format("Wrong username or password!"))
-        };
+        }
     }
 }

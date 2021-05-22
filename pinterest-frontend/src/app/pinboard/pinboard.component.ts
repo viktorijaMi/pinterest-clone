@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Params, Router } from '@angular/router';
 import { PinService } from '../services/pin.service';
+import { SecurityService } from '../services/security.service';
 import { PinModel } from '../model/pin';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { FavoriteModel } from '../model/favorite';
 
 @Component({
@@ -14,22 +15,42 @@ export class PinboardComponent implements OnInit {
 
   pins: PinModel[] = []
   favorite: FavoriteModel | undefined;
+  name: string | undefined;
   delete = new Subject<number>();
   reload = new Subject<boolean>();
 
-  constructor(private service: PinService, private route: ActivatedRoute, private router: Router) {
+  constructor(private pinService: PinService,
+              private securityService: SecurityService,
+              private route: ActivatedRoute,
+              private router: Router) {
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
   }
 
   ngOnInit(): void {
     this.loadAllPins()
+    this.getUserInfo()
   }
 
   loadAllPins() {
-    this.service.getAllPins()
+    this.pinService.getAllPins()
       .subscribe((result: PinModel[]) => {
         console.log('Result ', result);
         this.pins = result;
+      });
+    }
+
+    getUserInfo() {
+        this.securityService.getUserInfo()
+        .subscribe((result) => {
+          this.name = result
+        })
+    }
+
+    logout()
+    {
+      this.securityService.logout() .subscribe(() => {
+        this.securityService.removeToken();
+        this.router.navigate(['/login']);
       });
     }
 }

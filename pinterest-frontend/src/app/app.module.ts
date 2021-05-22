@@ -8,9 +8,12 @@ import { PinboardComponent } from './pinboard/pinboard.component';
 import { PinDetailsComponent } from './pin-details/pin-details.component';
 import { AddPinComponent } from './add-pin/add-pin.component';
 import { RouterModule } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxMasonryModule } from 'ngx-masonry';
+import { LoginComponent } from './login/login.component';
+import { CallbackComponent } from './callback/callback.component';
+import { AuthInterceptor } from './auth-header.interceptor';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,9 @@ import { NgxMasonryModule } from 'ngx-masonry';
     HeaderComponent,
     PinboardComponent,
     PinDetailsComponent,
-    AddPinComponent
+    AddPinComponent,
+    LoginComponent,
+    CallbackComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +34,11 @@ import { NgxMasonryModule } from 'ngx-masonry';
     ReactiveFormsModule,
     NgxMasonryModule
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -4,6 +4,7 @@ import com.sorsix.pinterestclone.domain.Favorite
 import com.sorsix.pinterestclone.domain.Pin
 import com.sorsix.pinterestclone.domain.User
 import com.sorsix.pinterestclone.exceptions.PinNotFoundException
+import com.sorsix.pinterestclone.exceptions.UserNotFoundException
 import com.sorsix.pinterestclone.repository.PinJpaRepository
 import com.sorsix.pinterestclone.service.FavoriteService
 import com.sorsix.pinterestclone.service.PinService
@@ -31,8 +32,8 @@ class PinServiceImpl(
         return repository.findAllByCreatedByUsername(username)
     }
 
-    override fun savePin(pinDto: PinDto): Pin {
-        val user: User = userService.findByUsername(pinDto.username)
+    override fun savePin(pinDto: PinDto, createdByUsername: String): Pin {
+        val user: User = userService.getUser(createdByUsername)
         val favorites: MutableList<Favorite> = mutableListOf()
         val newPin = Pin(0, pinDto.url, pinDto.description, 0, favorites, user)
         return repository.save(newPin)

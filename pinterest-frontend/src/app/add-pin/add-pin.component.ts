@@ -15,8 +15,7 @@ export class AddPinComponent implements OnInit {
 
   checkoutForm = this.formBuilder.group({
     description: '',
-    url: '',
-    username: ''
+    url: ''
   });
 
   reload = new Subject<boolean>();
@@ -28,7 +27,8 @@ export class AddPinComponent implements OnInit {
   }
 
   onSubmit() {
-    this.service.addPin(this.checkoutForm.value['description'], this.checkoutForm.value['url'], this.checkoutForm.value['username']).subscribe(
+    console.log("in add-pin component")
+    this.service.addPin(this.checkoutForm.value['description'], this.checkoutForm.value['url']).subscribe(
       (result) => {
         console.log("Added pin ", result);
         this.reload.next(false);

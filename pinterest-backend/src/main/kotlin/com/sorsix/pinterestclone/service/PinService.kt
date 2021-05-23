@@ -15,7 +15,7 @@ interface PinService {
 
     fun findAllByUserId(username: String): List<Pin>
 
-    fun savePin(pinDto: PinDto): Pin
+    fun savePin(pinDto: PinDto, createdByUsername: String): Pin
 
     fun deletePin(id: Long)
 

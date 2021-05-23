@@ -9,10 +9,11 @@ import { FavoriteModel } from '../model/favorite';
 })
 export class PinService {
 
+  private baseUrl = 'http://localhost:9090';
   constructor(private http: HttpClient) { }
 
   getAllPins(): Observable<PinModel[]> {
-    return this.http.get<PinModel[]>("/api/pins");
+    return this.http.get<PinModel[]>(this.baseUrl + "/api/pins");
   }
 
   getPinById(id: number): Observable<PinModel> {
@@ -20,11 +21,11 @@ export class PinService {
   }
 
 
-  addPin(description: String, url: String, username: String): Observable<PinModel> {
+  addPin(description: String, url: String): Observable<PinModel> {
+    console.log("in add pin")
     return this.http.post<PinModel>("/api/pins/add", {
       "description": description,
-      "url": url,
-      "username": username
+      "url": url
     })
   }
 

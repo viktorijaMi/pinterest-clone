@@ -11,3 +11,9 @@
         <app-pin-details [pin]="pin"></app-pin-details>
     </div>
 </div>
+
+<div *ngIf="login">
+  <div>{{login?.name}}</div>
+  <a class="btn btn-primary" href="http://localhost:9090/logout">Log out</a>
+</div>
+

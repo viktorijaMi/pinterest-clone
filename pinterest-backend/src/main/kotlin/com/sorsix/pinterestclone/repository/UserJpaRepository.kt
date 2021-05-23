@@ -7,6 +7,4 @@ import java.util.*
 
 @Repository
 interface UserJpaRepository : JpaRepository<User, String> {
-
-    fun findByUsernameAndPassword(username: String, password: String) : Optional<User>
 }

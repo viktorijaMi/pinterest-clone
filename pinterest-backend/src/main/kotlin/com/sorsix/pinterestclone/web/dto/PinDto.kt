@@ -4,7 +4,5 @@ data class PinDto(
 
     val description: String,
 
-    val url: String,
-
-    val username: String
+    val url: String
 )

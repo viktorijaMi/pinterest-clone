@@ -6,6 +6,7 @@ import com.sorsix.pinterestclone.service.FavoriteService
 import com.sorsix.pinterestclone.service.PinService
 import com.sorsix.pinterestclone.web.dto.PinDto
 import org.springframework.http.ResponseEntity
+import org.springframework.security.core.context.SecurityContextHolder
 import org.springframework.web.bind.annotation.*
 
 
@@ -30,7 +31,7 @@ class PinController(
 
     @PostMapping("/add")
     fun savePin(@RequestBody pinDto: PinDto): ResponseEntity<Pin> {
-        return this.pinService.savePin(pinDto).let {
+        return this.pinService.savePin(pinDto, SecurityContextHolder.getContext().authentication.name).let {
             ResponseEntity.ok(it)
         }
     }

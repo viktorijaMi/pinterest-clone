@@ -12,49 +12,58 @@ import org.springframework.security.core.context.SecurityContextHolder
 import org.springframework.security.core.userdetails.UserDetails
 import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.stereotype.Service
+import java.util.*
 
 
 @Service
 class UserServiceImpl(
-    val repository: UserJpaRepository,
-    val passwordEncoder: PasswordEncoder
-) : UserService {
+    val repository: UserJpaRepository) : UserService {
 
-    override fun register(username: String?, password: String?, repeatedPassword: String?): User {
-        if (username == null || password == null) {
-            throw InvalidArgumentsException(String.format("Invalid username or password!"))
+    //    override fun register(username: String?, password: String?, repeatedPassword: String?): User {
+//        if (username == null || password == null) {
+//            throw InvalidArgumentsException(String.format("Invalid username or password!"))
+//        }
+//        if (!password.equals(repeatedPassword))
+//            throw PasswordsDoNotMatchException(String.format("Passwords do not match!"));
+//        if (this.repository.findById(username).isPresent())
+//            throw UsernameAlreadyExistsException(String.format("User with username %s already exists", username));
+//        val user: User = User(username, passwordEncoder.encode(password));
+//        return repository.save(user);
+//    }
+//
+//    override fun findByUsername(username: String): User {
+//        return repository.findById(username)
+//            .orElseThrow { UserNotFoundException(String.format("User with username %s is not found", username)) }
+//    }
+//
+//    override fun getAuthenticatedUser(): User? {
+////        return findByUsername(auth2User.name)
+//        val authentication: Authentication = SecurityContextHolder.getContext().authentication
+//        val currentPrincipalName: String = authentication.getName()
+//        if (currentPrincipalName == "anonymousUser")
+//            return null
+//        return this.findByUsername(currentPrincipalName)
+//
+//    }
+//
+//    override fun saveAuthenticatedUser(user: User): User {
+//        if (this.repository.findById(user.username).isPresent) {
+//            return user
+//        }
+//        return this.repository.save(user)
+//    }
+//
+//    override fun loadUserByUsername(username: String): UserDetails {
+//        return this.findByUsername(username)
+//    }
+    override fun getUser(username: String): User {
+        return repository.findById(username).orElseThrow { UserNotFoundException(String.format("User with username %s is not found", username)) }
+    }
+
+    override fun addUser(user: User): User {
+        val newUser: User = repository.findById(user.username).orElseGet{
+            repository.save(user)
         }
-        if (!password.equals(repeatedPassword))
-            throw PasswordsDoNotMatchException(String.format("Passwords do not match!"));
-        if (this.repository.findById(username).isPresent())
-            throw UsernameAlreadyExistsException(String.format("User with username %s already exists", username));
-        val user: User = User(username, passwordEncoder.encode(password));
-        return repository.save(user);
-    }
-
-    override fun findByUsername(username: String): User {
-        return repository.findById(username)
-            .orElseThrow { UserNotFoundException(String.format("User with username %s is not found", username)) }
-    }
-
-    override fun getAuthenticatedUser(): User? {
-//        return findByUsername(auth2User.name)
-        val authentication: Authentication = SecurityContextHolder.getContext().authentication
-        val currentPrincipalName: String = authentication.getName()
-        if (currentPrincipalName == "anonymousUser")
-            return null
-        return this.findByUsername(currentPrincipalName)
-
-    }
-
-    override fun saveAuthenticatedUser(user: User): User {
-        if (this.repository.findById(user.username).isPresent) {
-            return user
-        }
-        return this.repository.save(user)
-    }
-
-    override fun loadUserByUsername(username: String): UserDetails {
-        return this.findByUsername(username)
+        return Optional.of(newUser).orElseThrow { UserNotFoundException(String.format("User with username %s is not found", user.username)) }
     }
 }

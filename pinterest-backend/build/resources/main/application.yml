@@ -7,20 +7,22 @@ spring:
     password: pinuser
   jpa:
     show-sql: true
+    hibernate:
+      ddl-auto: update
   security:
     oauth2:
       client:
         registration:
           github:
-            clientId: 3f9ac8a5747eab1b637d
-            clientSecret: c8d8cce60b5652fb624d266ffadeaca56752925f
-#            accessTokenUri: https://github.com/login/oauth/access_token
-#            userAuthorizationUri: https://github.com/login/oauth/authorize
-#            tokenName: oauth_token
-#            authenticationScheme: query
-#            clientAuthenticationScheme: form
-#          resource:
-#            userInfoUri: https://api.github.com/user
+            clientId: 9385601e4a0d12837f53
+            clientSecret: 1973b7388045a911717785b15b365c8ab0d19e71
+            accessTokenUri: https://github.com/login/oauth/access_token
+            userAuthorizationUri: https://github.com/login/oauth/authorize
+            tokenName: oauth_token
+            authenticationScheme: query
+            clientAuthenticationScheme: form
+          resource:
+            userInfoUri: https://api.github.com/user
 #github:
 #  client:
 #    clientId: 3f9ac8a5747eab1b637d

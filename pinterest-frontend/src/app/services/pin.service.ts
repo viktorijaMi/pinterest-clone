@@ -20,6 +20,10 @@ export class PinService {
     return this.http.get<PinModel>(`/api/pins/${id}`)
   }
 
+  getMyPins() : Observable<PinModel[]> {
+    return this.http.get<PinModel[]>("/api/pins/my-pins");
+  }
+
 
   addPin(description: String, url: String): Observable<PinModel> {
     console.log("in add pin")
@@ -37,9 +41,8 @@ export class PinService {
     return this.http.get<FavoriteModel[]>(`/api/favorites/${id}`)
   }
 
-  favoritePin(pinId: number, username: string) {
+  favoritePin(pinId: number) {
     console.log("pinId: ", pinId)
-    console.log("username: ", username)
-    return this.http.post(`/api/favorites/${pinId}?username=${username}`, {})
+    return this.http.post(`/api/favorites/${pinId}`, {})
   }
 }

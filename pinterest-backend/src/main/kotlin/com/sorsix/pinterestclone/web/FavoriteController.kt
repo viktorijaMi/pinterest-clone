@@ -6,6 +6,8 @@ import com.sorsix.pinterestclone.exceptions.PinNotFoundException
 import com.sorsix.pinterestclone.service.FavoriteService
 import com.sorsix.pinterestclone.service.PinService
 import org.springframework.http.ResponseEntity
+import org.springframework.security.core.annotation.AuthenticationPrincipal
+import org.springframework.security.oauth2.core.user.OAuth2User
 import org.springframework.web.bind.annotation.*
 
 @RestController
@@ -23,8 +25,9 @@ class FavoriteController(
     @PostMapping("/{pinId}")
     fun updateFavorite(
         @PathVariable pinId: Long,
-        @RequestParam username: String
+        @AuthenticationPrincipal principal: OAuth2User
     ) {
+        val username: String = principal.attributes["name"].toString()
         this.favoriteService.updateFavorite(pinId, username)
     }
 

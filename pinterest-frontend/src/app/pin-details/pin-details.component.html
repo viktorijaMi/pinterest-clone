@@ -9,7 +9,7 @@
   <button type="button" (click)="onFavorite()">FAVORITE</button>
 </div> -->
 
-<div class="d-md-flex flex-md-equal my-md-3">
+<div class="d-md-flex flex-md-equal my-md-3" *ngIf="pin">
   <img class="bd-placeholder-img card-img-top" src="{{ pin.url }}" alt="">
   <div class="card-body">
     <h5 class="card-title">{{ pin.description }}</h5>

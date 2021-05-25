@@ -6,6 +6,7 @@ import { PinModel } from '../model/pin';
 import { Observable, Subject } from 'rxjs';
 import { FavoriteModel } from '../model/favorite';
 import { UserModel } from '../model/user';
+import {UserService} from '../services/user.service'
 
 @Component({
   selector: 'app-pinboard',
@@ -16,21 +17,24 @@ export class PinboardComponent implements OnInit {
 
   pins: PinModel[] = []
   favorite: FavoriteModel | undefined;
-  name: string | undefined;
+  username: string | undefined;
   user: UserModel | undefined;
+  token: string | undefined;
   delete = new Subject<number>();
   reload = new Subject<boolean>();
 
   constructor(private pinService: PinService,
               private securityService: SecurityService,
+              private userService: UserService,
               private route: ActivatedRoute,
               private router: Router) {
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
   }
 
   ngOnInit(): void {
+    console.log("token: ",this.securityService.getToken())
     this.loadAllPins()
-    this.getUser()
+    this.getUserUsername()
   }
 
   loadAllPins() {
@@ -41,25 +45,17 @@ export class PinboardComponent implements OnInit {
       });
     }
 
-    getUserInfo() {
-        this.securityService.getUserInfo()
-        .subscribe((result) => {
-          this.name = result
-        })
-    }
+  getUserUsername() {
+    this.userService.getUserUsername().subscribe(result => {
+      this.username = `${result['name']}`
+      this.getUser(this.username)
+    })
+  }
 
-    getUser() {
-      this.securityService.getUser().subscribe((result) => {
-        console.log(result)
-        this.user = result;
-      })
-    }
-
-    logout()
-    {
-      this.securityService.logout() .subscribe(() => {
-        this.securityService.removeToken();
-        this.router.navigate(['/login']);
-      });
-    }
+  getUser(username: string) {
+    console.log("username in get user", username)
+    this.userService.addUser(username).subscribe((result) => {
+      this.user = result
+    })
+  }
 }

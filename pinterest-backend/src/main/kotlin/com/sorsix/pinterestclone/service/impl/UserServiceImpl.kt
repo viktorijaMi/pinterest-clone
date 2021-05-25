@@ -7,6 +7,7 @@ import com.sorsix.pinterestclone.exceptions.UserNotFoundException
 import com.sorsix.pinterestclone.exceptions.UsernameAlreadyExistsException
 import com.sorsix.pinterestclone.repository.UserJpaRepository
 import com.sorsix.pinterestclone.service.UserService
+import com.sorsix.pinterestclone.web.dto.UserDto
 import org.springframework.security.core.Authentication
 import org.springframework.security.core.context.SecurityContextHolder
 import org.springframework.security.core.userdetails.UserDetails
@@ -20,17 +21,17 @@ class UserServiceImpl(
     val repository: UserJpaRepository,
     val passwordEncoder: PasswordEncoder) : UserService {
 
-        override fun register(username: String?, password: String?, repeatedPassword: String?): User {
-        if (username == null || password == null) {
-            throw InvalidArgumentsException(String.format("Invalid username or password!"))
-        }
-        if (!password.equals(repeatedPassword))
-            throw PasswordsDoNotMatchException(String.format("Passwords do not match!"));
-        if (this.repository.findById(username).isPresent())
-            throw UsernameAlreadyExistsException(String.format("User with username %s already exists", username));
-        val user: User = User(username, passwordEncoder.encode(password));
-        return repository.save(user);
-    }
+//        override fun register(username: String?, password: String?, repeatedPassword: String?): User {
+//        if (username == null || password == null) {
+//            throw InvalidArgumentsException(String.format("Invalid username or password!"))
+//        }
+//        if (!password.equals(repeatedPassword))
+//            throw PasswordsDoNotMatchException(String.format("Passwords do not match!"));
+//        if (this.repository.findById(username).isPresent())
+//            throw UsernameAlreadyExistsException(String.format("User with username %s already exists", username));
+////        val user: User = User(username, passwordEncoder.encode(password));
+//        return repository.save(user);
+//    }
 
     override fun findByUsername(username: String): User {
         return repository.findById(username)
@@ -47,14 +48,15 @@ class UserServiceImpl(
 
     }
 
-    override fun saveAuthenticatedUser(user: User): User {
-        if (this.repository.findById(user.username).isPresent) {
-            return user
+    override fun saveAuthenticatedUser(userDto: UserDto): User {
+        if (this.repository.findById(userDto.username).isPresent) {
+            return this.repository.findById(userDto.username).get()
         }
+        val user: User = User(userDto.username)
         return this.repository.save(user)
     }
 
-    override fun loadUserByUsername(username: String): UserDetails {
-        return this.findByUsername(username)
-    }
+//    override fun loadUserByUsername(username: String): UserDetails {
+//        return this.findByUsername(username)
+//    }
 }

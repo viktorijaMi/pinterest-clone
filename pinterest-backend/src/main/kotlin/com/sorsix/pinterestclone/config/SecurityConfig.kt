@@ -87,9 +87,10 @@ class SecurityConfig(
     @Throws(IOException::class)
     fun successHandler(request: HttpServletRequest, response: HttpServletResponse, authentication: Authentication) {
         val token : String = tokenStore.generateToken( authentication );
-        response.getWriter().write(
-                mapper.writeValueAsString( Collections.singletonMap( "accessToken", token ) )
-        );
+//        response.getWriter().write(
+//                mapper.writeValueAsString( Collections.singletonMap( "accessToken", token ) )
+//        );
+        response.sendRedirect("http://localhost:4200/pins?accessToken=$token")
     }
 
     @Throws(IOException::class)

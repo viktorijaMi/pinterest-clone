@@ -792,7 +792,7 @@ false YEKT
 false Z
 false Zulu
 </TimeZones>
-      <StartupTime>1621665405</StartupTime>
+      <StartupTime>1621923201</StartupTime>
     </root>
     <database id="2" parent="1" name="book-shop">
       <ObjectId>16536</ObjectId>
@@ -831,9 +831,9 @@ false Zulu
 13423||-9223372036854775808|U|G
 13423||10|U|G</Grants>
       <Owner>pinuser</Owner>
-      <IntrospectionStateNumber>1409</IntrospectionStateNumber>
+      <IntrospectionStateNumber>1491</IntrospectionStateNumber>
       <Current>1</Current>
-      <Relations>sequence|table|34007|34009|1
+      <Relations>sequence|table|34178|34180|1
 </Relations>
     </database>
     <database id="9" parent="1" name="po_orders">
@@ -920,7 +920,7 @@ false Zulu
       <Comment>standard public schema</Comment>
       <StateNumber>287</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>1410</IntrospectionStateNumber>
+      <IntrospectionStateNumber>1492</IntrospectionStateNumber>
       <Current>1</Current>
     </schema>
     <extension id="28" parent="8" name="plpgsql">
@@ -1021,38 +1021,48 @@ false Zulu
       <Type>index</Type>
     </access-method>
     <sequence id="40" parent="27" name="pin_id_seq">
-      <ObjectId>34007</ObjectId>
+      <ObjectId>34178</ObjectId>
       <Owner>pinuser</Owner>
-      <StateNumber>1407</StateNumber>
+      <StateNumber>1484</StateNumber>
       <DataType>bigint|0s</DataType>
     </sequence>
     <table id="41" parent="27" name="favorite">
-      <ObjectId>34002</ObjectId>
+      <ObjectId>34173</ObjectId>
       <Owner>pinuser</Owner>
-      <StateNumber>1408</StateNumber>
+      <StateNumber>1487</StateNumber>
     </table>
     <table id="42" parent="27" name="pin">
-      <ObjectId>34009</ObjectId>
+      <ObjectId>34180</ObjectId>
       <Owner>pinuser</Owner>
-      <StateNumber>1408</StateNumber>
+      <StateNumber>1487</StateNumber>
     </table>
-    <column id="43" parent="41" name="pin_id">
+    <table id="43" parent="27" name="user_authorities">
+      <ObjectId>34188</ObjectId>
+      <Owner>pinuser</Owner>
+      <StateNumber>1490</StateNumber>
+    </table>
+    <table id="44" parent="27" name="users">
+      <ObjectId>34194</ObjectId>
+      <Owner>pinuser</Owner>
+      <StateNumber>1488</StateNumber>
+    </table>
+    <column id="45" parent="41" name="pin_id">
       <Position>1</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1406</StateNumber>
+      <StateNumber>1483</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="44" parent="41" name="user_username">
+    <column id="46" parent="41" name="user_username">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1406</StateNumber>
+      <StateNumber>1483</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="45" parent="41" name="favorite_pkey">
-      <ObjectId>34005</ObjectId>
-      <StateNumber>1406</StateNumber>
+    <index id="47" parent="41" name="favorite_pkey">
+      <ObjectId>34176</ObjectId>
+      <StateNumber>1483</StateNumber>
       <ColNames>pin_id
 user_username</ColNames>
       <Unique>1</Unique>
@@ -1063,60 +1073,70 @@ user_username</ColNames>
 default</CollationNames>
       <ClassIds>3124,3126</ClassIds>
     </index>
-    <key id="46" parent="41" name="favorite_pkey">
-      <ObjectId>34006</ObjectId>
-      <StateNumber>1406</StateNumber>
+    <key id="48" parent="41" name="favorite_pkey">
+      <ObjectId>34177</ObjectId>
+      <StateNumber>1483</StateNumber>
       <ColNames>pin_id
 user_username</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>favorite_pkey</UnderlyingIndexName>
     </key>
-    <foreign-key id="47" parent="41" name="fkmy4q15ffqhjamj9gwgtbwboh4">
-      <ObjectId>34017</ObjectId>
-      <StateNumber>1408</StateNumber>
+    <foreign-key id="49" parent="41" name="fkmy4q15ffqhjamj9gwgtbwboh4">
+      <ObjectId>34199</ObjectId>
+      <StateNumber>1487</StateNumber>
       <ColNames>pin_id</ColNames>
-      <RefTableId>34009</RefTableId>
+      <RefTableId>34180</RefTableId>
       <RefColPositions>1</RefColPositions>
       <RefTableName>pin</RefTableName>
       <RefKeyName>pin_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="48" parent="42" name="id">
+    <foreign-key id="50" parent="41" name="fkoc6qotq8bmmthc4f9wi58wp0o">
+      <ObjectId>34204</ObjectId>
+      <StateNumber>1488</StateNumber>
+      <ColNames>user_username</ColNames>
+      <RefTableId>34194</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>users</RefTableName>
+      <RefKeyName>users_pkey</RefKeyName>
+      <RefColNames>username</RefColNames>
+    </foreign-key>
+    <column id="51" parent="42" name="id">
       <Position>1</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1407</StateNumber>
+      <StateNumber>1484</StateNumber>
       <TypeId>20</TypeId>
       <IdentityKind>by-default</IdentityKind>
     </column>
-    <column id="49" parent="42" name="description">
+    <column id="52" parent="42" name="description">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>1407</StateNumber>
+      <StateNumber>1484</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="50" parent="42" name="num_favorites">
+    <column id="53" parent="42" name="num_favorites">
       <Position>3</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1407</StateNumber>
+      <StateNumber>1484</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="51" parent="42" name="url">
+    <column id="54" parent="42" name="url">
       <Position>4</Position>
       <DataType>varchar(2048)|0s</DataType>
-      <StateNumber>1407</StateNumber>
+      <StateNumber>1484</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="52" parent="42" name="created_by_username">
+    <column id="55" parent="42" name="created_by_username">
       <Position>5</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>1407</StateNumber>
+      <StateNumber>1484</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="53" parent="42" name="pin_pkey">
-      <ObjectId>34015</ObjectId>
-      <StateNumber>1407</StateNumber>
+    <index id="56" parent="42" name="pin_pkey">
+      <ObjectId>34186</ObjectId>
+      <StateNumber>1484</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
@@ -1124,12 +1144,70 @@ user_username</ColNames>
       <CollationIds>0</CollationIds>
       <ClassIds>3124</ClassIds>
     </index>
-    <key id="54" parent="42" name="pin_pkey">
-      <ObjectId>34016</ObjectId>
-      <StateNumber>1407</StateNumber>
+    <key id="57" parent="42" name="pin_pkey">
+      <ObjectId>34187</ObjectId>
+      <StateNumber>1484</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>pin_pkey</UnderlyingIndexName>
+    </key>
+    <foreign-key id="58" parent="42" name="fkcct09nqiwk7qyeck9ltwrqgcq">
+      <ObjectId>34209</ObjectId>
+      <StateNumber>1489</StateNumber>
+      <ColNames>created_by_username</ColNames>
+      <RefTableId>34194</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>users</RefTableName>
+      <RefKeyName>users_pkey</RefKeyName>
+      <RefColNames>username</RefColNames>
+    </foreign-key>
+    <column id="59" parent="43" name="user_username">
+      <Position>1</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1485</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="60" parent="43" name="authorities">
+      <Position>2</Position>
+      <DataType>bytea|0s</DataType>
+      <StateNumber>1485</StateNumber>
+      <TypeId>17</TypeId>
+    </column>
+    <foreign-key id="61" parent="43" name="fkia7pfa331g655gp40ykmgifh0">
+      <ObjectId>34214</ObjectId>
+      <StateNumber>1490</StateNumber>
+      <ColNames>user_username</ColNames>
+      <RefTableId>34194</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>users</RefTableName>
+      <RefKeyName>users_pkey</RefKeyName>
+      <RefColNames>username</RefColNames>
+    </foreign-key>
+    <column id="62" parent="44" name="username">
+      <Position>1</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1486</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="63" parent="44" name="users_pkey">
+      <ObjectId>34197</ObjectId>
+      <StateNumber>1486</StateNumber>
+      <ColNames>username</ColNames>
+      <Unique>1</Unique>
+      <Primary>1</Primary>
+      <AccessMethodId>403</AccessMethodId>
+      <CollationIds>100</CollationIds>
+      <CollationNames>default</CollationNames>
+      <ClassIds>3126</ClassIds>
+    </index>
+    <key id="64" parent="44" name="users_pkey">
+      <ObjectId>34198</ObjectId>
+      <StateNumber>1486</StateNumber>
+      <ColNames>username</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>users_pkey</UnderlyingIndexName>
     </key>
   </database-model>
 </dataSource>

@@ -1,8 +1,10 @@
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FavoriteModel } from '../model/favorite';
 import { PinModel } from '../model/pin';
 import { PinService } from '../services/pin.service';
+import { SecurityService } from '../services/security.service';
 
 @Component({
   selector: 'app-pin-details',
@@ -14,9 +16,15 @@ export class PinDetailsComponent implements OnInit {
   @Input() pin!: PinModel;
 
   favorites: FavoriteModel[] = []
-  constructor(private service: PinService) { }
+  constructor(private service: PinService,
+              private route: ActivatedRoute,
+              private router: Router,
+              private securityService: SecurityService) { }
 
   ngOnInit(): void {
+    this.route.queryParams.subscribe(params => {
+      this.securityService.updateToken(params['accessToken'])
+    })
     this.loadPin()
   }
 
@@ -37,7 +45,7 @@ export class PinDetailsComponent implements OnInit {
   }
 
   onFavorite() {
-    this.service.favoritePin(this.pin?.id, this.pin?.createdBy.username).subscribe(() => {
+    this.service.favoritePin(this.pin?.id).subscribe(() => {
       this.loadPin()
     })
   }

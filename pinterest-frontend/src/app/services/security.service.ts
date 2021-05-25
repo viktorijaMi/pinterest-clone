@@ -25,8 +25,9 @@ export class SecurityService {
     window.open(this.baseUrl + this.authorizeEndpoint, '_self')
   }
 
-  updateToken(token: string) {
+  updateToken(token: string){
     localStorage.setItem(this.tokenKey, token);
+    console.log("token: ", localStorage.getItem(this.tokenKey))
   }
 
   fetchToken(code: string, state: string) : Observable<any> {
@@ -53,7 +54,7 @@ export class SecurityService {
 
   logout(): Observable<any> {
     console.log("in logout service")
-    return this.http.post('/logout', this.getToken());
+    return this.http.post(this.baseUrl + '/logout', this.getToken());
   }
 
   getUser() : Observable<UserModel> {

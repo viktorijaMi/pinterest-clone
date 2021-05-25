@@ -14,6 +14,7 @@ import { NgxMasonryModule } from 'ngx-masonry';
 import { LoginComponent } from './login/login.component';
 import { CallbackComponent } from './callback/callback.component';
 import { AuthInterceptor } from './auth-header.interceptor';
+import { MyPinsComponent } from './my-pins/my-pins.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { AuthInterceptor } from './auth-header.interceptor';
     PinDetailsComponent,
     AddPinComponent,
     LoginComponent,
-    CallbackComponent
+    CallbackComponent,
+    MyPinsComponent
   ],
   imports: [
     BrowserModule,

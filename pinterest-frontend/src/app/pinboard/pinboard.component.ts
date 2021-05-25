@@ -6,7 +6,7 @@ import { PinModel } from '../model/pin';
 import { Observable, Subject } from 'rxjs';
 import { FavoriteModel } from '../model/favorite';
 import { UserModel } from '../model/user';
-import { Login } from '../model/login'
+
 @Component({
   selector: 'app-pinboard',
   templateUrl: './pinboard.component.html',
@@ -16,7 +16,10 @@ export class PinboardComponent implements OnInit {
 
   pins: PinModel[] = []
   favorite: FavoriteModel | undefined;
-  login: Login | undefined
+  name: string | undefined;
+  user: UserModel | undefined;
+  delete = new Subject<number>();
+  reload = new Subject<boolean>();
 
   constructor(private pinService: PinService,
               private securityService: SecurityService,
@@ -26,8 +29,8 @@ export class PinboardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getUser()
     this.loadAllPins()
+    this.getUser()
   }
 
   loadAllPins() {
@@ -38,10 +41,25 @@ export class PinboardComponent implements OnInit {
       });
     }
 
-  getUser() {
-    this.securityService.getLogin().subscribe((result) => {
-      this.login = result
-    })
-  }
+    getUserInfo() {
+        this.securityService.getUserInfo()
+        .subscribe((result) => {
+          this.name = result
+        })
+    }
 
+    getUser() {
+      this.securityService.getUser().subscribe((result) => {
+        console.log(result)
+        this.user = result;
+      })
+    }
+
+    logout()
+    {
+      this.securityService.logout() .subscribe(() => {
+        this.securityService.removeToken();
+        this.router.navigate(['/login']);
+      });
+    }
 }

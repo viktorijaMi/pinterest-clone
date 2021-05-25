@@ -13,7 +13,7 @@ export class PinService {
   constructor(private http: HttpClient) { }
 
   getAllPins(): Observable<PinModel[]> {
-    return this.http.get<PinModel[]>(this.baseUrl + "/api/pins");
+    return this.http.get<PinModel[]>("/api/pins");
   }
 
   getPinById(id: number): Observable<PinModel> {

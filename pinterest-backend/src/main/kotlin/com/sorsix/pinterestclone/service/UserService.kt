@@ -5,17 +5,13 @@ import org.springframework.security.core.userdetails.UserDetailsService
 import org.springframework.stereotype.Service
 import java.util.*
 
-interface UserService {
+interface UserService : UserDetailsService{
 
-//    fun register(username: String?, password: String?, repeatedPassword: String?): User
-//
-//   fun findByUsername(username: String): User
-//
-//    fun getAuthenticatedUser() : User?
-//
-//    fun saveAuthenticatedUser(user: User) : User
+    fun register(username: String?, password: String?, repeatedPassword: String?): User
 
-    fun getUser(username: String): User
+   fun findByUsername(username: String): User
 
-    fun addUser(user: User) : User
+    fun getAuthenticatedUser() : User?
+
+    fun saveAuthenticatedUser(user: User) : User
 }

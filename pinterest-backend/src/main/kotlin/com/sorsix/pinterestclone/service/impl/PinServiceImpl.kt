@@ -33,7 +33,7 @@ class PinServiceImpl(
     }
 
     override fun savePin(pinDto: PinDto, createdByUsername: String): Pin {
-        val user: User = userService.getUser(createdByUsername)
+        val user: User = userService.findByUsername(createdByUsername)
         val favorites: MutableList<Favorite> = mutableListOf()
         val newPin = Pin(0, pinDto.url, pinDto.description, 0, favorites, user)
         return repository.save(newPin)

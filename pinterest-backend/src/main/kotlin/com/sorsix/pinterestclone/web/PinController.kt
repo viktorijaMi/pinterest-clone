@@ -46,8 +46,6 @@ class PinController(
         this.pinService.deletePin(id)
     }
 
-
-
     /**
      * Error handlers
      * */

@@ -7,24 +7,26 @@ spring:
     password: pinuser
   jpa:
     show-sql: true
-security:
-  oauth2:
-    client:
-      clientId: 3f9ac8a5747eab1b637d
-      clientSecret: ac20cd2307aa26d0677efa065ca948fc9a1a7822
-      accessTokenUri: https://github.com/login/oauth/access_token
-      userAuthorizationUri: https://github.com/login/oauth/authorize
-      tokenName: oauth_token
-      authenticationScheme: query
-      clientAuthenticationScheme: form
-    resource:
-      userInfoUri: https://api.github.com/user
-github:
-  client:
-    clientId: 3f9ac8a5747eab1b637d
-    clientSecret: ac20cd2307aa26d0677efa065ca948fc9a1a7822
-    accessTokenUri: https://github.com/login/oauth/access_token
-    userAuthorizationUri: https://github.com/login/oauth/authorize
-    clientAuthenticationScheme: form
-  resource:
-    userInfoUri: https://api.github.com/user
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            clientId: 3f9ac8a5747eab1b637d
+            clientSecret: c8d8cce60b5652fb624d266ffadeaca56752925f
+#            accessTokenUri: https://github.com/login/oauth/access_token
+#            userAuthorizationUri: https://github.com/login/oauth/authorize
+#            tokenName: oauth_token
+#            authenticationScheme: query
+#            clientAuthenticationScheme: form
+#          resource:
+#            userInfoUri: https://api.github.com/user
+#github:
+#  client:
+#    clientId: 3f9ac8a5747eab1b637d
+#    clientSecret: ac20cd2307aa26d0677efa065ca948fc9a1a7822
+#    accessTokenUri: https://github.com/login/oauth/access_token
+#    userAuthorizationUri: https://github.com/login/oauth/authorize
+#    clientAuthenticationScheme: form
+#  resource:
+#    userInfoUri: https://api.github.com/user

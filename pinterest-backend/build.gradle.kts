@@ -28,8 +28,8 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.springframework.boot:spring-boot-starter-security")
-//    implementation("org.springframework.boot:spring-boot-starter-oauth2-client") --> za rabota so tipot
-    implementation("org.springframework.security.oauth.boot:spring-security-oauth2-autoconfigure:2.0.0.RELEASE")
+    implementation("org.springframework.boot:spring-boot-starter-oauth2-client")
+//    implementation("org.springframework.security.oauth.boot:spring-security-oauth2-autoconfigure:2.0.0.RELEASE")
     runtimeOnly("org.postgresql:postgresql:42.2.11")
 
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")

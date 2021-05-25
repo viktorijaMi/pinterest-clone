@@ -12,6 +12,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxMasonryModule } from 'ngx-masonry';
 import { LoginComponent } from './login/login.component';
+import { CallbackComponent } from './callback/callback.component';
+import { AuthInterceptor } from './auth-header.interceptor';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,7 @@ import { LoginComponent } from './login/login.component';
     PinDetailsComponent,
     AddPinComponent,
     LoginComponent,
-
+    CallbackComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +34,11 @@ import { LoginComponent } from './login/login.component';
     ReactiveFormsModule,
     NgxMasonryModule
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

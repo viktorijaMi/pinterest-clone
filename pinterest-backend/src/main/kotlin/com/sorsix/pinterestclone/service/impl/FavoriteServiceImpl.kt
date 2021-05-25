@@ -46,7 +46,7 @@ class FavoriteServiceImpl(
             this.repository.delete(favorite)
         } else {
             val pin: Pin = this.pinService.findById(pinId)
-            val user: User = this.userService.getUser(username)
+            val user: User = this.userService.findByUsername(username)
             favorite = Favorite(FavoriteId(pinId, username), pin, user)
             this.pinService.addFavorite(pinId, favorite)
             this.repository.save(favorite)

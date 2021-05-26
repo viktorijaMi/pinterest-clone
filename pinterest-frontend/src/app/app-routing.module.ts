@@ -8,12 +8,12 @@ import {LoginComponent} from './login/login.component'
 import { CallbackComponent } from './callback/callback.component';
 
 const routes: Route[]= [
-  { path: 'dashboard', component: PinboardComponent, canActivate: [AuthGuard] },
+  { path: 'dashboard', component: PinboardComponent },
   { path: 'login', component: LoginComponent },
   { path: 'callback', component: CallbackComponent },
-  { path: 'pins', component: MyPinsComponent },
+  { path: 'pins', component: MyPinsComponent, canActivate: [AuthGuard]},
   { path: 'add-pin', component: AddPinComponent},
-  // { path: '', redirectTo:'dashboard' , pathMatch: 'full'},
+  { path: '', redirectTo:'dashboard' , pathMatch: 'full'},
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

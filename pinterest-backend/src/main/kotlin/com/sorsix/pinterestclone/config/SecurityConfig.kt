@@ -48,16 +48,8 @@ class SecurityConfig(
             .and()
             .exceptionHandling()
             .authenticationEntryPoint( this::authenticationEntryPoint)
-            .and().logout().addLogoutHandler(this::logout).logoutSuccessHandler(this::onLogoutSuccess)
+//            .and().logout().addLogoutHandler(this::logout).logoutSuccessHandler(this::onLogoutSuccess)
         http.addFilterBefore(tokenFilter, UsernamePasswordAuthenticationFilter::class.java)
-//        http.csrf().disable()
-//            .authorizeRequests()
-//            .antMatchers("/","/error","/webjars/**").permitAll()
-//            .anyRequest().authenticated()
-//            .and()
-//            .exceptionHandling().authenticationEntryPoint(HttpStatusEntryPoint(HttpStatus.UNAUTHORIZED))
-//            .and()
-//            .oauth2Login();
     }
 
     fun logout(request: HttpServletRequest, response: HttpServletResponse, authentication: Authentication) {
@@ -87,10 +79,7 @@ class SecurityConfig(
     @Throws(IOException::class)
     fun successHandler(request: HttpServletRequest, response: HttpServletResponse, authentication: Authentication) {
         val token : String = tokenStore.generateToken( authentication );
-//        response.getWriter().write(
-//                mapper.writeValueAsString( Collections.singletonMap( "accessToken", token ) )
-//        );
-        response.sendRedirect("http://localhost:4200/pins?accessToken=$token")
+        response.sendRedirect("http://localhost:4200/dashboard?accessToken=$token")
     }
 
     @Throws(IOException::class)

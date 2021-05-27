@@ -54,7 +54,7 @@ export class SecurityService {
 
   logout(): Observable<any> {
     console.log("in logout service")
-    return this.http.post(this.baseUrl + '/logout', this.getToken());
+    return this.http.post(this.baseUrl + '/custom-logout', this.getToken());
   }
 
   getUser() : Observable<UserModel> {

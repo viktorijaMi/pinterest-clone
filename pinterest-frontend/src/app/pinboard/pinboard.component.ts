@@ -32,6 +32,9 @@ export class PinboardComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.route.queryParams.subscribe(params => {
+      this.securityService.updateToken(params['accessToken'])
+    })
     console.log("token: ",this.securityService.getToken())
     this.loadAllPins()
     this.getUserUsername()

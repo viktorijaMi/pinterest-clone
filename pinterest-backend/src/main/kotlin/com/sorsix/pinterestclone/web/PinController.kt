@@ -43,7 +43,7 @@ class PinController(
     fun savePin(@RequestBody pinDto: PinDto,
                 @AuthenticationPrincipal principal: OAuth2User
     ): ResponseEntity<Pin> {
-        val username: String = principal.attributes["name"].toString()
+        val username: String = principal.attributes["login"].toString()
         return this.pinService.savePin(pinDto, username).let {
             ResponseEntity.ok(it)
         }

@@ -1038,11 +1038,13 @@ false Zulu
     </table>
     <table id="43" parent="27" name="user_authorities">
       <ObjectId>34188</ObjectId>
+      <Outdated>1</Outdated>
       <Owner>pinuser</Owner>
       <StateNumber>1490</StateNumber>
     </table>
     <table id="44" parent="27" name="users">
       <ObjectId>34194</ObjectId>
+      <Outdated>1</Outdated>
       <Owner>pinuser</Owner>
       <StateNumber>1488</StateNumber>
     </table>

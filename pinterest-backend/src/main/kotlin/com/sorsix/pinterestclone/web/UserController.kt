@@ -22,12 +22,12 @@ class UserController(
         return Collections.singletonMap("name", principal.getAttribute("name"))
     }
 
-    @PostMapping("/add")
-    fun saveUser(@RequestBody userDto: UserDto) {
-        return this.userService.saveAuthenticatedUser(userDto).let {
-            ResponseEntity.ok(it)
-        }
-    }
+//    @PostMapping("/add")
+//    fun saveUser(@RequestBody userDto: UserDto) {
+//        return this.userService.saveAuthenticatedUser(userDto).let {
+//            ResponseEntity.ok(it)
+//        }
+//    }
 
     /**
      * Error handlers

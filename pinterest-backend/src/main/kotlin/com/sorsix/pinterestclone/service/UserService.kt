@@ -8,8 +8,6 @@ import java.util.*
 
 interface UserService{
 
-//    fun register(username: String?, password: String?, repeatedPassword: String?): User
-
    fun findByUsername(username: String): User
 
     fun getAuthenticatedUser() : User?

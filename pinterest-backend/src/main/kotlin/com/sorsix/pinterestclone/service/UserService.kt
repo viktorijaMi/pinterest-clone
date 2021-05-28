@@ -12,5 +12,5 @@ interface UserService{
 
     fun getAuthenticatedUser() : User?
 
-    fun saveAuthenticatedUser(userDto: UserDto) : User
+    fun saveAuthenticatedUser(username : String) : User
 }

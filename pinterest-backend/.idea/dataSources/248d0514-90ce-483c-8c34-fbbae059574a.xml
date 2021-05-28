@@ -1033,6 +1033,7 @@ false Zulu
     </table>
     <table id="42" parent="27" name="pin">
       <ObjectId>34180</ObjectId>
+      <Outdated>1</Outdated>
       <Owner>pinuser</Owner>
       <StateNumber>1487</StateNumber>
     </table>

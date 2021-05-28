@@ -31,11 +31,11 @@ class UserServiceImpl(
 
     }
 
-    override fun saveAuthenticatedUser(userDto: UserDto): User {
-        if (this.repository.findById(userDto.username).isPresent) {
-            return this.repository.findById(userDto.username).get()
+    override fun saveAuthenticatedUser(username: String): User {
+        if (this.repository.findById(username).isPresent) {
+            return this.repository.findById(username).get()
         }
-        val user: User = User(userDto.username)
+        val user: User = User(username)
         return this.repository.save(user)
     }
 

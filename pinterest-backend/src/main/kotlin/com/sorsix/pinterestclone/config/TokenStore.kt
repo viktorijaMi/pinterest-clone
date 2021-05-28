@@ -14,8 +14,8 @@ class TokenStore(private val userService: UserService){
 
     fun generateToken(authentication: Authentication) : String{
         val user : OAuth2User = authentication.principal as OAuth2User
-        val dto : UserDto = UserDto(user.attributes["login"].toString())
-        this.userService.saveAuthenticatedUser(dto)
+        val username = user.attributes["login"].toString()
+        this.userService.saveAuthenticatedUser(username)
         val token : String = UUID.randomUUID().toString()
         cache[token] = authentication
         return token;

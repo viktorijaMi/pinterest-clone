@@ -43,8 +43,8 @@ class SecurityConfig(
             .and()
             .exceptionHandling()
             .authenticationEntryPoint( this::authenticationEntryPoint)
-//            .and().logout().addLogoutHandler(this::logout).logoutSuccessHandler(this::onLogoutSuccess)
-        http.addFilterBefore(tokenFilter, UsernamePasswordAuthenticationFilter::class.java)
+            .and().logout().addLogoutHandler(this::logout).logoutSuccessHandler(this::onLogoutSuccess)
+        http.addFilterAfter(tokenFilter, UsernamePasswordAuthenticationFilter::class.java)
     }
 
     fun logout(request: HttpServletRequest, response: HttpServletResponse, authentication: Authentication) {

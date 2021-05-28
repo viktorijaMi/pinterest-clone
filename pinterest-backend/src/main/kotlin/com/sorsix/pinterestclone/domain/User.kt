@@ -6,7 +6,8 @@ import javax.persistence.*
 @Table(name = "users")
 data class User(
     @Id
-    private var username: String,
+    @Column(length = 1000)
+    var username: String,
 
 )  {
 

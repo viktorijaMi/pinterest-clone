@@ -8,7 +8,7 @@ import { SecurityService } from '../services/security.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private securityService: SecurityService, private router: Router) { }
+  constructor(public securityService: SecurityService, private router: Router) { }
 
   ngOnInit(): void {
   }

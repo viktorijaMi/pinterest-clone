@@ -792,7 +792,7 @@ false YEKT
 false Z
 false Zulu
 </TimeZones>
-      <StartupTime>1621923201</StartupTime>
+      <StartupTime>1622014690</StartupTime>
     </root>
     <database id="2" parent="1" name="book-shop">
       <ObjectId>16536</ObjectId>
@@ -831,7 +831,7 @@ false Zulu
 13423||-9223372036854775808|U|G
 13423||10|U|G</Grants>
       <Owner>pinuser</Owner>
-      <IntrospectionStateNumber>1491</IntrospectionStateNumber>
+      <IntrospectionStateNumber>1502</IntrospectionStateNumber>
       <Current>1</Current>
       <Relations>sequence|table|34178|34180|1
 </Relations>
@@ -920,7 +920,7 @@ false Zulu
       <Comment>standard public schema</Comment>
       <StateNumber>287</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>1492</IntrospectionStateNumber>
+      <IntrospectionStateNumber>1503</IntrospectionStateNumber>
       <Current>1</Current>
     </schema>
     <extension id="28" parent="8" name="plpgsql">
@@ -1033,19 +1033,16 @@ false Zulu
     </table>
     <table id="42" parent="27" name="pin">
       <ObjectId>34180</ObjectId>
-      <Outdated>1</Outdated>
       <Owner>pinuser</Owner>
       <StateNumber>1487</StateNumber>
     </table>
     <table id="43" parent="27" name="user_authorities">
       <ObjectId>34188</ObjectId>
-      <Outdated>1</Outdated>
       <Owner>pinuser</Owner>
       <StateNumber>1490</StateNumber>
     </table>
     <table id="44" parent="27" name="users">
       <ObjectId>34194</ObjectId>
-      <Outdated>1</Outdated>
       <Owner>pinuser</Owner>
       <StateNumber>1488</StateNumber>
     </table>

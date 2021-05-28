@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PinService } from '../services/pin.service';
 import { Subject } from 'rxjs';
 import { FormBuilder } from '@angular/forms';
@@ -21,7 +21,8 @@ export class AddPinComponent implements OnInit {
   reload = new Subject<boolean>();
 
   constructor(private service: PinService,
-    private formBuilder: FormBuilder) { }
+    private formBuilder: FormBuilder,
+    private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -35,5 +36,6 @@ export class AddPinComponent implements OnInit {
       }
     )
     this.checkoutForm.reset();
+    this.router.navigate(['/dashboard']);
   }
 }

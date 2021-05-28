@@ -32,12 +32,7 @@ export class PinboardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.route.queryParams.subscribe(params => {
-      this.securityService.updateToken(params['accessToken'])
-    })
-    console.log("token: ",this.securityService.getToken())
     this.loadAllPins()
-    this.getUserUsername()
   }
 
   loadAllPins() {
@@ -48,17 +43,4 @@ export class PinboardComponent implements OnInit {
       });
     }
 
-  getUserUsername() {
-    this.userService.getUserUsername().subscribe(result => {
-      this.username = `${result['name']}`
-      this.getUser(this.username)
-    })
-  }
-
-  getUser(username: string) {
-    console.log("username in get user", username)
-    this.userService.addUser(username).subscribe((result) => {
-      this.user = result
-    })
-  }
 }

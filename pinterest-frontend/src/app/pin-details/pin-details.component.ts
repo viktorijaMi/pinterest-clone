@@ -14,6 +14,7 @@ import { SecurityService } from '../services/security.service';
 export class PinDetailsComponent implements OnInit {
 
   @Input() pin!: PinModel;
+  @Input() callbackFunction!: () => void;
 
   favorites: FavoriteModel[] = []
   constructor(private service: PinService,
@@ -22,9 +23,6 @@ export class PinDetailsComponent implements OnInit {
               private securityService: SecurityService) { }
 
   ngOnInit(): void {
-    this.route.queryParams.subscribe(params => {
-      this.securityService.updateToken(params['accessToken'])
-    })
     this.loadPin()
   }
 
@@ -41,7 +39,9 @@ export class PinDetailsComponent implements OnInit {
   }
 
   onDelete() {
-    this.service.deletePin(this.pin.id).subscribe();
+    this.service.deletePin(this.pin.id).subscribe(() =>{
+      this.callbackFunction()
+    });
   }
 
   onFavorite() {

@@ -13,8 +13,8 @@
 
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                 <li><a routerLink="/dashboard" class="nav-link px-2 link-secondary">All Pins</a></li>
-                <li><a routerLink="/pins" class="nav-link px-2 link-secondary">My pins</a></li>
-                <li><a routerLink="/add-pin" class="nav-link px-2 link-secondary">Add pin</a></li>
+                <li><a *ngIf="securityService.isLoggedIn() == true" routerLink="/pins" class="nav-link px-2 link-secondary">My pins</a></li>
+                <li><a *ngIf="securityService.isLoggedIn() == true" routerLink="/add-pin" class="nav-link px-2 link-secondary">Add pin</a></li>
             </ul>
 
             <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
@@ -24,8 +24,8 @@
             <div class="text-end">
                 <!-- <button type="button" class="btn btn-outline-light me-2">Login</button>
                 <button type="button" class="btn btn-warning">Sign-up</button> -->
-                <a routerLink="/login">Login</a>
-                <button (click)="logout()">Logout</button>
+                <a *ngIf="securityService.isLoggedIn() == false" routerLink="/login">Login</a>
+                <button *ngIf="securityService.isLoggedIn() == true" (click)="logout()">Logout</button>
             </div>
         </div>
     </div>

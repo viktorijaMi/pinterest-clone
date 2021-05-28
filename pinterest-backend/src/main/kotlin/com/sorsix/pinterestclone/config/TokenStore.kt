@@ -21,8 +21,12 @@ class TokenStore(private val userService: UserService){
         return token;
     }
 
-    fun removeToken ( token: String) : Boolean {
-        return this.cache.remove(token) != null;
+    fun removeToken ( authentication: Authentication?) : Boolean {
+        if (authentication != null) {
+            val token = this.cache.filter { it.value == authentication }.keys.first()
+            return this.cache.remove(token) != null
+        }
+        return false
     }
 
     fun getAuth( token : String ) : Authentication?

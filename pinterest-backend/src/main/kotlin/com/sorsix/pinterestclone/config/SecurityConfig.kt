@@ -8,6 +8,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter
 import org.springframework.security.core.Authentication
 import org.springframework.security.core.AuthenticationException
+import org.springframework.security.core.context.SecurityContextHolder
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter
 import org.springframework.web.cors.CorsConfiguration
 import org.springframework.web.cors.CorsConfigurationSource
@@ -43,11 +44,12 @@ class SecurityConfig(
             .and()
             .exceptionHandling()
             .authenticationEntryPoint( this::authenticationEntryPoint)
-            .and().logout().addLogoutHandler(this::logout).logoutSuccessHandler(this::onLogoutSuccess)
-        http.addFilterAfter(tokenFilter, UsernamePasswordAuthenticationFilter::class.java)
+            .and().logout().logoutUrl("/logout").logoutSuccessHandler(this::onLogoutSuccess)
+        http.addFilterBefore(tokenFilter, UsernamePasswordAuthenticationFilter::class.java)
     }
 
-    fun logout(request: HttpServletRequest, response: HttpServletResponse, authentication: Authentication) {
+    fun logout(request: HttpServletRequest, response: HttpServletResponse, authentication: Authentication?) {
+        val auth: Authentication = SecurityContextHolder.getContext().getAuthentication()
         System.out.println("Auth token is - " + request.getHeader( "Authorization" ))
     }
 
@@ -68,13 +70,14 @@ class SecurityConfig(
         request: HttpServletRequest?, response: HttpServletResponse,
         authentication: Authentication?
     ) {
+        this.tokenStore.removeToken(authentication)
         response.status = HttpServletResponse.SC_OK
     }
 
     @Throws(IOException::class)
     fun successHandler(request: HttpServletRequest, response: HttpServletResponse, authentication: Authentication) {
         val token : String = tokenStore.generateToken( authentication );
-        response.sendRedirect("http://localhost:4200/dashboard?accessToken=$token")
+        response.sendRedirect("http://localhost:4200/callback?accessToken=$token")
     }
 
     @Throws(IOException::class)

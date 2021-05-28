@@ -15,12 +15,11 @@ export class CallbackComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // this.route.queryParams.subscribe(p => {
-    //   this.securityService.fetchToken(p.code, p.state).subscribe(data => {
-    //     this.securityService.updateToken(data.accessToken);
-    //     this.router.navigate(['/dashboard']);
-    //   })
-    // })
+    this.route.queryParams.subscribe(params => {
+      this.securityService.updateToken(params['accessToken'])
+      console.log("accessToken: ", params['accessToken'])
+    })
+    this.router.navigate(["/dashboard"])
   }
 
 }

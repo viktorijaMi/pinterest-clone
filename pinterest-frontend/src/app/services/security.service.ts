@@ -27,7 +27,7 @@ export class SecurityService {
 
   updateToken(token: string){
     localStorage.setItem(this.tokenKey, token);
-    console.log("token: ", localStorage.getItem(this.tokenKey))
+    console.log("in update token: ", localStorage.getItem(this.tokenKey))
   }
 
   fetchToken(code: string, state: string) : Observable<any> {
@@ -35,12 +35,14 @@ export class SecurityService {
   }
 
   getToken() {
+    console.log("in get token: ", localStorage.getItem(this.tokenKey))
     return localStorage.getItem(this.tokenKey)
   }
 
   isLoggedIn(): boolean {
     const token = this.getToken()
-    return token != null
+    // treba da se proveruva i !== undefined
+    return token !== null && token !== undefined
   }
 
   getUserInfo() : Observable<any> {
@@ -48,13 +50,11 @@ export class SecurityService {
   }
 
   removeToken() {
-    console.log("in remove token key")
     localStorage.removeItem(this.tokenKey);
   }
 
   logout(): Observable<any> {
-    console.log("in logout service")
-    return this.http.post(this.baseUrl + '/custom-logout', this.getToken());
+    return this.http.get(this.baseUrl + '/logout');
   }
 
   getUser() : Observable<UserModel> {

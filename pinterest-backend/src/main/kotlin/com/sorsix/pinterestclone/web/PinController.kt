@@ -20,14 +20,14 @@ class PinController(
     val pinService: PinService
 ) {
 
-    @GetMapping()
+    @GetMapping("/all")
     fun listAllPins(): List<Pin> {
         return pinService.findAll();
     }
 
     @GetMapping("/my-pins")
     fun listMyPins(@AuthenticationPrincipal principal: OAuth2User) : List<Pin> {
-        val username: String = principal.attributes["name"].toString()
+        val username: String = principal.attributes["login"].toString()
         val pins: List<Pin> = pinService.findAllByUserId(username)
         return pins
     }

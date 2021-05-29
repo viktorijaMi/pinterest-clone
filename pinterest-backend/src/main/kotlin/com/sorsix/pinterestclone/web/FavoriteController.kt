@@ -27,7 +27,7 @@ class FavoriteController(
         @PathVariable pinId: Long,
         @AuthenticationPrincipal principal: OAuth2User
     ) {
-        val username: String = principal.attributes["name"].toString()
+        val username: String = principal.attributes["login"].toString()
         this.favoriteService.updateFavorite(pinId, username)
     }
 

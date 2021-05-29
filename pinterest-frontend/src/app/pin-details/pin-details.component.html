@@ -4,6 +4,9 @@
     <div class="card-body">
         <h3 class="card-title">{{ pin.description }}</h3>
         <p class="card-text">{{ pin.createdBy.username }}</p>
+        <button type="button" (click)="onFavorite()"><i class="fa fa-lg fa-star" (click)="onFavorite()"></i></button>
+        <span class="glyphicon glyphicon-hourglass c-hide" aria-hidden="true"></span>
+        <p class="card-text">{{ pin.numFavorites }}</p>
         <a href="#" class="btn btn-outline-secondary">Outline</a>
     </div>
   </div>

@@ -32,7 +32,7 @@ class SecurityConfig(
 
     override fun configure(http: HttpSecurity) {
         http.csrf().disable().cors().and().authorizeRequests()
-            .antMatchers("/oauth2/**", "/login**").permitAll()
+            .antMatchers("/oauth2/**", "/login**","/api/pins/all").permitAll()
             .anyRequest()
             .authenticated()
             .and()
@@ -44,7 +44,7 @@ class SecurityConfig(
             .and()
             .exceptionHandling()
             .authenticationEntryPoint( this::authenticationEntryPoint)
-            .and().logout().logoutUrl("/logout").logoutSuccessHandler(this::onLogoutSuccess)
+            .and().logout().logoutSuccessHandler(this::onLogoutSuccess)
         http.addFilterBefore(tokenFilter, UsernamePasswordAuthenticationFilter::class.java)
     }
 

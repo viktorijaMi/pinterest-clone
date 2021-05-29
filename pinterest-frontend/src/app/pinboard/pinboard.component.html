@@ -1,7 +1,7 @@
 <div class="container py-2 grid">
     <div class="row" data-masonry='{"percentPosition": true }'>
       <div *ngFor="let pin of pins">
-        <app-pin-details [pin]="pin" [callbackFunction]="loadAllPins"></app-pin-details>
+        <app-pin-details [pin]="pin" (callbackFunction)="loadAllPins"></app-pin-details>
       </div>
     </div>
 </div>

@@ -38,12 +38,6 @@ export class PinDetailsComponent implements OnInit {
     })
   }
 
-  onDelete() {
-    this.service.deletePin(this.pin.id).subscribe(() =>{
-      this.callbackFunction()
-    });
-  }
-
   onFavorite() {
     this.service.favoritePin(this.pin?.id).subscribe(() => {
       this.loadPin()

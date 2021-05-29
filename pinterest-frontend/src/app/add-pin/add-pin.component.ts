@@ -28,14 +28,12 @@ export class AddPinComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log("in add-pin component")
     this.service.addPin(this.checkoutForm.value['description'], this.checkoutForm.value['url']).subscribe(
       (result) => {
-        console.log("Added pin ", result);
         this.reload.next(false);
       }
     )
     this.checkoutForm.reset();
-    this.router.navigate(['/dashboard']);
+    this.router.navigate(['/pins']);
   }
 }

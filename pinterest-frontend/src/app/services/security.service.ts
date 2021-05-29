@@ -27,7 +27,6 @@ export class SecurityService {
 
   updateToken(token: string){
     localStorage.setItem(this.tokenKey, token);
-    console.log("in update token: ", localStorage.getItem(this.tokenKey))
   }
 
   fetchToken(code: string, state: string) : Observable<any> {
@@ -35,7 +34,6 @@ export class SecurityService {
   }
 
   getToken() {
-    console.log("in get token: ", localStorage.getItem(this.tokenKey))
     return localStorage.getItem(this.tokenKey)
   }
 
@@ -53,8 +51,8 @@ export class SecurityService {
     localStorage.removeItem(this.tokenKey);
   }
 
-  logout(): Observable<any> {
-    return this.http.get(this.baseUrl + '/logout');
+  logout() {
+    return this.http.get(this.baseUrl + '/api/logout');
   }
 
   getUser() : Observable<UserModel> {

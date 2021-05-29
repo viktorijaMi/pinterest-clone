@@ -19,7 +19,7 @@ class UserController(
 
     @GetMapping
     fun user(@AuthenticationPrincipal principal: OAuth2User): Map<String?, Any?>? {
-        return Collections.singletonMap("name", principal.getAttribute("name"))
+        return Collections.singletonMap("login", principal.getAttribute("login"))
     }
 
     /**

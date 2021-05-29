@@ -20,9 +20,6 @@ export class MyPinsComponent implements OnInit {
     private securityService: SecurityService) { }
 
   ngOnInit(): void {
-    this.route.queryParams.subscribe(params => {
-      this.securityService.updateToken(params['accessToken'])
-    })
     this.loadMyPins()
   }
 
@@ -31,5 +28,11 @@ export class MyPinsComponent implements OnInit {
       console.log("result: ", result)
       this.pins = result
     })
+  }
+
+  onDelete(id: number) {
+    this.pinService.deletePin(id).subscribe(() =>{
+      this.loadMyPins()
+    });
   }
 }

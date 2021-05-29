@@ -6,8 +6,11 @@ import javax.persistence.*
 @Table(name = "users")
 data class User(
     @Id
-    @Column(length = 1000)
+    var id: Int,
+
     var username: String,
+
+    var avatarUrl: String
 
 )  {
 

@@ -2,10 +2,7 @@ package com.sorsix.pinterestclone.web
 
 import com.sorsix.pinterestclone.domain.Favorite
 import com.sorsix.pinterestclone.exceptions.FavoriteNotFoundException
-import com.sorsix.pinterestclone.exceptions.PinNotFoundException
 import com.sorsix.pinterestclone.service.FavoriteService
-import com.sorsix.pinterestclone.service.PinService
-import org.springframework.http.ResponseEntity
 import org.springframework.security.core.annotation.AuthenticationPrincipal
 import org.springframework.security.oauth2.core.user.OAuth2User
 import org.springframework.web.bind.annotation.*
@@ -13,13 +10,12 @@ import org.springframework.web.bind.annotation.*
 @RestController
 @RequestMapping("/api/favorites")
 class FavoriteController(
-    val pinService: PinService,
     val favoriteService: FavoriteService
 ) {
 
-    @GetMapping("/{id}")
-    fun getAllByPinId(@PathVariable id: Long): List<Favorite> {
-        return this.favoriteService.findAllByPinId(id)
+    @GetMapping("/{pinId}")
+    fun getAllByPinId(@PathVariable pinId: Long): List<Favorite> {
+        return this.favoriteService.findAllByPinId(pinId)
     }
 
     @PostMapping("/{pinId}")
@@ -27,8 +23,8 @@ class FavoriteController(
         @PathVariable pinId: Long,
         @AuthenticationPrincipal principal: OAuth2User
     ) {
-        val username: String = principal.attributes["login"].toString()
-        this.favoriteService.updateFavorite(pinId, username)
+        val userId: Int = principal.attributes["id"] as Int
+        this.favoriteService.updateFavorite(pinId, userId)
     }
 
     /**

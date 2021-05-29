@@ -1,14 +1,11 @@
-<div class="col-sm-4 col-md-3 py-3">
-  <div class="card">
-    <img class="card-img-top" src="{{ pin.url }}" alt="Pin image">
-    <div class="card-body">
-        <h3 class="card-title">{{ pin.description }}</h3>
-        <p class="card-text">{{ pin.createdBy.username }}</p>
-        <button type="button" (click)="onFavorite()"><i class="fa fa-lg fa-star" (click)="onFavorite()"></i></button>
-        <span class="glyphicon glyphicon-hourglass c-hide" aria-hidden="true"></span>
-        <p class="card-text">{{ pin.numFavorites }}</p>
-        <a href="#" class="btn btn-outline-secondary">Outline</a>
-    </div>
+<img class="pin-img" src="{{ pin.url }}" alt="Pin image">
+<div>
+  <h3 class="pin-title">{{ pin.description }}</h3>
+  <div style="background-color: lightgray; justify-content: space-between;">
+    <img style="width:50px; height:50px;"src="{{pin.createdBy.avatarUrl}}" alt="Avatar image">
+    <p style="float: right;"class="pin-detail">{{ pin.createdBy.username }}</p>
   </div>
+  <button type="button" (click)="onFavorite()"><i class="fa fa-lg fa-star" (click)="onFavorite()"></i></button>
+  <span class="glyphicon glyphicon-hourglass c-hide" aria-hidden="true"></span>
+  <p class="pin-detail">{{ pin.numFavorites }}</p>
 </div>
-

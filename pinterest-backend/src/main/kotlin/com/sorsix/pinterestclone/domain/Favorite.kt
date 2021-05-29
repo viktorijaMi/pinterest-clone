@@ -10,12 +10,12 @@ data class Favorite(
 
     @JsonIgnore
     @ManyToOne
-    @JoinColumn(name = "pin_id")
-    @MapsId("pin_id")
+    @JoinColumn(name = "pinId")
+    @MapsId("pinId")
     var pin: Pin,
 
     @ManyToOne
-    @MapsId("user_username")
+    @MapsId("userId")
     var user: User
 
 )

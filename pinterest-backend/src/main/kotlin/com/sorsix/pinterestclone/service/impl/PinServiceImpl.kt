@@ -4,9 +4,7 @@ import com.sorsix.pinterestclone.domain.Favorite
 import com.sorsix.pinterestclone.domain.Pin
 import com.sorsix.pinterestclone.domain.User
 import com.sorsix.pinterestclone.exceptions.PinNotFoundException
-import com.sorsix.pinterestclone.exceptions.UserNotFoundException
 import com.sorsix.pinterestclone.repository.PinJpaRepository
-import com.sorsix.pinterestclone.service.FavoriteService
 import com.sorsix.pinterestclone.service.PinService
 import com.sorsix.pinterestclone.service.UserService
 import com.sorsix.pinterestclone.web.dto.PinDto
@@ -16,7 +14,6 @@ import org.springframework.stereotype.Service
 class PinServiceImpl(
     val repository: PinJpaRepository,
     val userService: UserService,
-//    val favoriteService: FavoriteService
 ) : PinService {
 
     override fun findAll(): List<Pin> {
@@ -28,24 +25,19 @@ class PinServiceImpl(
             .orElseThrow { PinNotFoundException(String.format("Pin with id %d is not found", id)) }
     }
 
-    override fun findAllByUserId(username: String): List<Pin> {
-        return repository.findAllByCreatedByUsername(username)
+    override fun findAllByUserId(id: Int): List<Pin> {
+        return repository.findAllByCreatedById(id)
     }
 
-    override fun savePin(pinDto: PinDto, createdByUsername: String): Pin {
-        val user: User = userService.findByUsername(createdByUsername)
+    override fun savePin(pinDto: PinDto, createdById: Int): Pin {
+        val user: User = userService.findById(createdById)
         val favorites: MutableList<Favorite> = mutableListOf()
         val newPin = Pin(0, pinDto.url, pinDto.description, 0, favorites, user)
         return repository.save(newPin)
     }
 
     override fun deletePin(id: Long) {
-//        this.favoriteService.deleteFavoriteByPin(pinId = id)
         repository.deleteById(id)
-    }
-
-    override fun updatePin(id: Long, description: String) {
-        this.repository.updatePin(id, description)
     }
 
     override fun removeFavorite(pinId: Long, favorite: Favorite) {

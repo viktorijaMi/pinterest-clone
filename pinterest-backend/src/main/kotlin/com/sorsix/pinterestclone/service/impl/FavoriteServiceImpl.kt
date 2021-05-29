@@ -19,6 +19,14 @@ class FavoriteServiceImpl(
     val pinService: PinService
 ) : FavoriteService {
 
+    override fun findAllByPinId(pinId: Long): List<Favorite> {
+        return this.repository.findAllByPinId(pinId)
+    }
+
+    override fun findAll(): List<Favorite> {
+        return this.repository.findAll()
+    }
+
     override fun findById(id: Long): Favorite {
         return this.repository.findById(id)
             .orElseThrow { FavoriteNotFoundException(String.format("Favorite with id %d not found", id)) }
@@ -29,32 +37,24 @@ class FavoriteServiceImpl(
             .orElseThrow { FavoriteNotFoundException(String.format("Favorite with pinId %d not found", pinId)) }
     }
 
-    override fun findAllByPinId(id: Long): List<Favorite> {
-        return this.repository.findAllByPinId(id)
-    }
-
-    override fun findAll(): List<Favorite> {
-        return this.repository.findAll()
-    }
-
-    override fun updateFavorite(pinId: Long, username: String): Favorite? {
+    override fun updateFavorite(pinId: Long, userId: Int): Favorite? {
         val favorite: Favorite
 
-        if (repository.findByPinIdAndUserUsername(pinId, username).isPresent) {
-            favorite = repository.findByPinIdAndUserUsername(pinId, username).get()
+        if (repository.findByPinIdAndUserId(pinId, userId).isPresent) {
+            favorite = repository.findByPinIdAndUserId(pinId, userId).get()
             this.pinService.removeFavorite(pinId, favorite)
             this.repository.delete(favorite)
         } else {
             val pin: Pin = this.pinService.findById(pinId)
-            val user: User = this.userService.findByUsername(username)
-            favorite = Favorite(FavoriteId(pinId, username), pin, user)
+            val user: User = this.userService.findById(userId)
+            favorite = Favorite(FavoriteId(pinId, userId), pin, user)
             this.pinService.addFavorite(pinId, favorite)
             this.repository.save(favorite)
         }
         return favorite
     }
 
-    override fun deleteFavoriteByPin(pinId: Long) {
+    override fun deleteFavoriteByPinId(pinId: Long) {
         val favorite: Favorite = this.findByPinId(pinId)
         this.repository.delete(favorite)
     }

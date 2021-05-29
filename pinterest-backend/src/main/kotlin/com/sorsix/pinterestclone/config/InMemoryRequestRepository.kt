@@ -7,11 +7,11 @@ import javax.servlet.http.HttpServletResponse
 
 class InMemoryRequestRepository : AuthorizationRequestRepository<OAuth2AuthorizationRequest> {
 
-    private val cache: HashMap<String, OAuth2AuthorizationRequest> = HashMap<String, OAuth2AuthorizationRequest>()
+    private val cache: HashMap<String, OAuth2AuthorizationRequest> = HashMap()
 
     override fun loadAuthorizationRequest(request: HttpServletRequest): OAuth2AuthorizationRequest? {
-        val state : String? = request.getParameter( "state" )
-        if ( state != null ) {
+        val state: String? = request.getParameter("state")
+        if (state != null) {
             return removeAuthorizationRequest(request)
         }
         return null
@@ -22,7 +22,7 @@ class InMemoryRequestRepository : AuthorizationRequestRepository<OAuth2Authoriza
         request: HttpServletRequest?,
         response: HttpServletResponse?
     ) {
-        val state:String = authorizationRequest.state
+        val state: String = authorizationRequest.state
         cache[state] = authorizationRequest;
     }
 
@@ -33,7 +33,4 @@ class InMemoryRequestRepository : AuthorizationRequestRepository<OAuth2Authoriza
         } else null
 
     }
-
-
-
 }

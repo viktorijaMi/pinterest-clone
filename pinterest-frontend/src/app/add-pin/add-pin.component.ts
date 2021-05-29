@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { PinService } from '../services/pin.service';
-import { Subject } from 'rxjs';
 import { FormBuilder } from '@angular/forms';
 
 @Component({
@@ -11,29 +10,24 @@ import { FormBuilder } from '@angular/forms';
 })
 export class AddPinComponent implements OnInit {
 
-  items = this.service.getAllPins();
-
   checkoutForm = this.formBuilder.group({
     description: '',
     url: ''
   });
 
-  reload = new Subject<boolean>();
-
   constructor(private service: PinService,
     private formBuilder: FormBuilder,
     private router: Router) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
   onSubmit() {
     this.service.addPin(this.checkoutForm.value['description'], this.checkoutForm.value['url']).subscribe(
       (result) => {
-        this.reload.next(false);
+        this.checkoutForm.reset();
+        this.router.navigate(['/my-pins']);
       }
     )
-    this.checkoutForm.reset();
-    this.router.navigate(['/pins']);
   }
 }

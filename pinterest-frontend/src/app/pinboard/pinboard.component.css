@@ -1,16 +1,27 @@
-/* *, *:before, *:after {box-sizing:  border-box !important;}
+.container {
+  width: 1200px;
+  margin: 20px auto;
+  columns: 4;
+  column-gap: 15px;
+}
+.container .box {
+  width: 100%;
+  margin: 0 0 20px;
+  padding: 10px;
+  background:whitesmoke;
+  border: 2px solid darkgray;
+  border-radius: 15px;
+  overflow: hidden;
+  break-inside: avoid;
+}
+@media (max-width: 1200px) {
+  .container {
+    columns: 3;
+    width: calc(100% - 40px);
+    box-sizing: border-box;
+    padding: 20px 20px 20px 0;
 
-
-.row {
- column-width: 18rem;
+  }
 }
 
-.item {
- display: inline-block;
- padding:  .25rem;
- width:  100%;
-} */
 
-.grid-item {
-  margin-bottom: 10px;
-}

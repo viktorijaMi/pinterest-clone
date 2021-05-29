@@ -11,7 +11,7 @@ const routes: Route[]= [
   { path: 'dashboard', component: PinboardComponent },
   { path: 'login', component: LoginComponent },
   { path: 'callback', component: CallbackComponent },
-  { path: 'pins', component: MyPinsComponent, canActivate: [AuthGuard]},
+  { path: 'my-pins', component: MyPinsComponent, canActivate: [AuthGuard]},
   { path: 'add-pin', component: AddPinComponent},
   { path: '', redirectTo:'dashboard' , pathMatch: 'full'},
 ];

@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse
 
 
 @Component
-class TokenFilter(private final val tokenStore: TokenStore) : OncePerRequestFilter() {
+class TokenFilter(private val tokenStore: TokenStore) : OncePerRequestFilter() {
 
     @Throws(IOException::class, ServletException::class)
     override fun doFilterInternal(
@@ -20,14 +20,14 @@ class TokenFilter(private final val tokenStore: TokenStore) : OncePerRequestFilt
         response: HttpServletResponse,
         filterChain: FilterChain
     ) {
-        val authToken : String? = request.getHeader( "Authorization" )
-        if ( authToken != null ) {
-            val token: String = authToken.split( " " )[ 1 ]
-            val authentication: Authentication? = tokenStore.getAuth( token )
-            if ( authentication != null ) {
+        val authToken: String? = request.getHeader("Authorization")
+        if (authToken != null) {
+            val token: String = authToken.split(" ")[1]
+            val authentication: Authentication? = tokenStore.getAuth(token)
+            if (authentication != null) {
                 SecurityContextHolder.getContext().authentication = authentication
             }
         }
-        filterChain.doFilter( request, response );
+        filterChain.doFilter(request, response);
     }
 }

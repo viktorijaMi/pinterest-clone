@@ -8,7 +8,7 @@ spring:
   jpa:
     show-sql: true
     hibernate:
-      ddl-auto: update
+      ddl-auto: create
   security:
     oauth2:
       client:
@@ -23,12 +23,4 @@ spring:
             clientAuthenticationScheme: form
           resource:
             userInfoUri: https://api.github.com/user
-#github:
-#  client:
-#    clientId: 3f9ac8a5747eab1b637d
-#    clientSecret: ac20cd2307aa26d0677efa065ca948fc9a1a7822
-#    accessTokenUri: https://github.com/login/oauth/access_token
-#    userAuthorizationUri: https://github.com/login/oauth/authorize
-#    clientAuthenticationScheme: form
-#  resource:
-#    userInfoUri: https://api.github.com/user
+

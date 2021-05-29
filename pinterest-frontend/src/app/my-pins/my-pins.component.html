@@ -1,9 +1,7 @@
-<div class="container py-2 grid">
-  <div class="row" data-masonry='{"percentPosition": true }'>
-    <div *ngFor="let pin of pins">
-      <app-pin-details [pin]="pin"></app-pin-details>
-      <button type="button" (click)="onDelete(pin.id)">DELETE</button>
-    </div>
+<div class="container">
+  <div class="box" *ngFor="let pin of pins">
+    <app-pin-details [pin]="pin"></app-pin-details>
+    <button type="button" (click)="onDelete(pin.id)">DELETE</button>
   </div>
 </div>
 

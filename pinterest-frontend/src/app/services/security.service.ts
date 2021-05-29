@@ -1,19 +1,13 @@
 import {Injectable} from '@angular/core';
-import {environment} from "../../environments/environment";
 import {Observable} from "rxjs";
 import {HttpClient} from "@angular/common/http";
-import { UserModel } from '../model/user';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SecurityService {
 
-
-  // redirecting to github authorization
   private authorizeEndpoint = '/oauth2/authorization/github'
-
-  // api callback to backend
   private tokenEndpoint = '/login/oauth2/code/github';
   private baseUrl = 'http://localhost:9090';
   private tokenKey = 'token';
@@ -39,12 +33,7 @@ export class SecurityService {
 
   isLoggedIn(): boolean {
     const token = this.getToken()
-    // treba da se proveruva i !== undefined
     return token !== null && token !== undefined
-  }
-
-  getUserInfo() : Observable<any> {
-    return this.http.get("/api/login")
   }
 
   removeToken() {
@@ -54,9 +43,4 @@ export class SecurityService {
   logout() {
     return this.http.get(this.baseUrl + '/api/logout');
   }
-
-  getUser() : Observable<UserModel> {
-    return this.http.get<UserModel>(this.baseUrl + '/api/user');
-  }
-
 }

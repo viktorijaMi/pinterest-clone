@@ -1,0 +1,30 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #333;
+}
+.container {
+  width: 1200px;
+  margin: 20px auto;
+  columns: 4;
+  column-gap: 40px;
+}
+.container .box {
+  width: 100%;
+  margin: 0 0 20px;
+  padding: 10px;
+  background:grey;
+  overflow: hidden;
+  break-inside: avoid;
+}
+@media (max-width: 1200px) {
+  .container {
+    columns: 3;
+    width: calc(100% - 40px);
+    box-sizing: border-box;
+    padding: 20px 20px 20px 0;
+
+  }
+}
+
+

@@ -1,0 +1,45 @@
+body,
+		html {
+			padding: 0;
+			height: 100%;
+			align-content: center;
+    }
+    .container{
+      align-content: center;
+    }
+		.user_card {
+			background: #c0392b;
+			flex-direction: column;
+			padding: 10px;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			-webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			-moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			border-radius: 5px;
+		}
+		.brand_logo_container {
+			position: relative;
+			height: 170px;
+			width: 170px;
+			border-radius: 50%;
+			background: #fff;
+			padding: 10px;
+			text-align: center;
+		}
+		.brand_logo {
+			height: 150px;
+			width: 150px;
+			border-radius: 50%;
+			border: 2px solid white;
+		}
+		.login_btn {
+			width: 100%;
+			background: rgb(39, 38, 38) !important;
+			color: white !important;
+		}
+		.login_btn:focus {
+			box-shadow: none !important;
+			outline: 0px !important;
+		}
+		.login_container {
+			padding: 0 2rem;
+		}

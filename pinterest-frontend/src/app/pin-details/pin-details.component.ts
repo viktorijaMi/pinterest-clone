@@ -1,10 +1,8 @@
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
 import { FavoriteModel } from '../model/favorite';
 import { PinModel } from '../model/pin';
+import { FavoriteService } from '../services/favorite.service';
 import { PinService } from '../services/pin.service';
-import { SecurityService } from '../services/security.service';
 
 @Component({
   selector: 'app-pin-details',
@@ -14,32 +12,30 @@ import { SecurityService } from '../services/security.service';
 export class PinDetailsComponent implements OnInit {
 
   @Input() pin!: PinModel;
-  @Input() callbackFunction!: () => void;
 
   favorites: FavoriteModel[] = []
-  constructor(private service: PinService,
-              private route: ActivatedRoute,
-              private router: Router,
-              private securityService: SecurityService) { }
+
+  constructor(private pinService: PinService,
+              private favoriteService: FavoriteService) { }
 
   ngOnInit(): void {
     this.loadPin()
   }
 
   loadFavorites(){
-    this.service.getAllFavoritesByPinId(this.pin.id).subscribe((result) => {
+    this.favoriteService.getAllFavoritesByPinId(this.pin.id).subscribe((result) => {
       this.favorites = result
     })
   }
 
   loadPin() {
-    this.service.getPinById(this.pin.id).subscribe((result) => {
+    this.pinService.getPinById(this.pin.id).subscribe((result) => {
       this.pin = result
     })
   }
 
   onFavorite() {
-    this.service.favoritePin(this.pin?.id).subscribe(() => {
+    this.favoriteService.favoritePin(this.pin?.id).subscribe(() => {
       this.loadPin()
     })
   }

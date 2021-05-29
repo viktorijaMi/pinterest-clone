@@ -1,16 +1,15 @@
 package com.sorsix.pinterestclone.service
 
 import com.sorsix.pinterestclone.domain.User
-import com.sorsix.pinterestclone.web.dto.UserDto
-import org.springframework.security.core.userdetails.UserDetailsService
-import org.springframework.stereotype.Service
 import java.util.*
 
-interface UserService{
+interface UserService {
 
-   fun findByUsername(username: String): User
+    fun findById(id: Int): User
 
-    fun getAuthenticatedUser() : User?
+    fun findByUsername(username: String): User
 
-    fun saveAuthenticatedUser(username : String) : User
+    fun getAuthenticatedUser(): User?
+
+    fun saveAuthenticatedUser(id: Int, username: String, avatarUrl: String): User
 }

@@ -8,7 +8,7 @@ interface PinService {
 
     fun findAll(): List<Pin>
 
-    fun findAllByUserId(id: Int): List<Pin>
+    fun findAllByCreatedById(id: Int): List<Pin>
 
     fun findById(id: Long): Pin
 

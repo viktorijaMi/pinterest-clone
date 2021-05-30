@@ -13,7 +13,7 @@ interface FavoriteService {
 
     fun findByPinId(pinId: Long): Favorite
 
-    fun updateFavorite(pinId: Long, userId: Int): Favorite?
+    fun updateFavorite(pinId: Long, userId: Int): Favorite
 
     fun deleteFavoriteByPinId(pinId: Long)
 }

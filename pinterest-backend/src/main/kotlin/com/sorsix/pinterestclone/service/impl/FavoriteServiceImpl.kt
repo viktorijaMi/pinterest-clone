@@ -37,7 +37,7 @@ class FavoriteServiceImpl(
             .orElseThrow { FavoriteNotFoundException(String.format("Favorite with pinId %d not found", pinId)) }
     }
 
-    override fun updateFavorite(pinId: Long, userId: Int): Favorite? {
+    override fun updateFavorite(pinId: Long, userId: Int): Favorite {
         val favorite: Favorite
 
         if (repository.findByPinIdAndUserId(pinId, userId).isPresent) {

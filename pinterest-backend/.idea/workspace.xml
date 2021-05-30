@@ -10,44 +10,19 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.8.3/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.8.3/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.8.3/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.8.3/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/248d0514-90ce-483c-8c34-fbbae059574a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/248d0514-90ce-483c-8c34-fbbae059574a.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/248d0514-90ce-483c-8c34-fbbae059574a/storage_v2/_src_/database/pinterest_clone.eNzsPA/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/248d0514-90ce-483c-8c34-fbbae059574a/storage_v2/_src_/database/pinterest_clone.eNzsPA/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/sorsix/pinterestclone/config/SecurityConfig$configure$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/sorsix/pinterestclone/config/SecurityConfig$configure$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/sorsix/pinterestclone/config/SecurityConfig$configure$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/sorsix/pinterestclone/config/SecurityConfig$configure$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/sorsix/pinterestclone/config/SecurityConfig$configure$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/sorsix/pinterestclone/config/SecurityConfig$configure$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/sorsix/pinterestclone/config/SecurityConfig$configure$3.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/sorsix/pinterestclone/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/sorsix/pinterestclone/config/SecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/sorsix/pinterestclone/config/TokenFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/sorsix/pinterestclone/config/TokenFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/sorsix/pinterestclone/config/TokenStore.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/sorsix/pinterestclone/config/TokenStore.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/sorsix/pinterestclone/domain/Favorite.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/sorsix/pinterestclone/domain/Favorite.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/sorsix/pinterestclone/domain/FavoriteId.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/sorsix/pinterestclone/domain/FavoriteId.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/sorsix/pinterestclone/domain/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/sorsix/pinterestclone/domain/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/sorsix/pinterestclone/domain/request/CreateUserRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/sorsix/pinterestclone/domain/security/AuthenticationRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/sorsix/pinterestclone/domain/security/AuthenticationResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/sorsix/pinterestclone/repository/FavoriteJpaRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/sorsix/pinterestclone/repository/FavoriteJpaRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/sorsix/pinterestclone/repository/PinJpaRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/sorsix/pinterestclone/repository/PinJpaRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/sorsix/pinterestclone/repository/UserJpaRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/sorsix/pinterestclone/repository/UserJpaRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/sorsix/pinterestclone/service/FavoriteService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/sorsix/pinterestclone/service/FavoriteService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/sorsix/pinterestclone/service/PinService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/sorsix/pinterestclone/service/PinService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/sorsix/pinterestclone/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/sorsix/pinterestclone/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/sorsix/pinterestclone/service/impl/FavoriteServiceImpl$findById$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/sorsix/pinterestclone/service/impl/FavoriteServiceImpl$findById$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/sorsix/pinterestclone/service/impl/FavoriteServiceImpl$findByPinId$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/sorsix/pinterestclone/service/impl/FavoriteServiceImpl$findByPinId$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/sorsix/pinterestclone/service/impl/FavoriteServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/sorsix/pinterestclone/service/impl/FavoriteServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/sorsix/pinterestclone/service/impl/PinServiceImpl$findById$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/sorsix/pinterestclone/service/impl/PinServiceImpl$findById$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/sorsix/pinterestclone/service/impl/PinServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/sorsix/pinterestclone/service/impl/PinServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/sorsix/pinterestclone/service/impl/UserServiceImpl$findByUsername$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/sorsix/pinterestclone/service/impl/UserServiceImpl$findByUsername$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/sorsix/pinterestclone/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/sorsix/pinterestclone/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/sorsix/pinterestclone/web/FavoriteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/sorsix/pinterestclone/web/FavoriteController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/sorsix/pinterestclone/web/LogoutController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/sorsix/pinterestclone/web/LogoutController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/sorsix/pinterestclone/web/PinController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/sorsix/pinterestclone/web/PinController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/sorsix/pinterestclone/web/UserController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/sorsix/pinterestclone/web/dto/UserDto.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/build-history.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/build-history.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/inputs/source-to-output.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/inputs/source-to-output.tab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/inputs/source-to-output.tab.values" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/inputs/source-to-output.tab.values" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/inputs/source-to-output.tab.values" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/inputs/source-to-output.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/inputs/source-to-output.tab.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/inputs/source-to-output.tab.values.s" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/inputs/source-to-output.tab.values.s" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/inputs/source-to-output.tab.values.s" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-attributes.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-attributes.tab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-attributes.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-attributes.tab.values.at" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab" afterDir="false" />
@@ -59,9 +34,9 @@
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab.values.at" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab_i" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab.values" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab.values" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab.values" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab.values.s" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab.values.s" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab.values.s" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab.values.at" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/subtypes.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/subtypes.tab" afterDir="false" />
@@ -81,77 +56,18 @@
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab.keystream" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab.keystream.len" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab.len" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab.values" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab.values" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab.values" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab.values.s" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab.values.s" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab.values.s" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab_i" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/last-build.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/last-build.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/config/InMemoryRequestRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/config/InMemoryRequestRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/config/SecurityConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/config/SecurityConfig.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/config/TokenFilter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/config/TokenFilter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/config/TokenStore.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/config/TokenStore.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/domain/Favorite.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/domain/Favorite.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/domain/FavoriteId.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/domain/FavoriteId.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/domain/User.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/domain/User.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/domain/request/CreateUserRequest.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/domain/security/AuthenticationRequest.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/domain/security/AuthenticationResponse.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/repository/FavoriteJpaRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/repository/FavoriteJpaRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/repository/PinJpaRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/repository/PinJpaRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/repository/UserJpaRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/repository/UserJpaRepository.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/service/FavoriteService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/service/FavoriteService.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/service/PinService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/service/PinService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/service/UserService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/service/UserService.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/service/impl/FavoriteServiceImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/service/impl/FavoriteServiceImpl.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/service/impl/PinServiceImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/service/impl/PinServiceImpl.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/service/impl/UserServiceImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/service/impl/UserServiceImpl.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/web/FavoriteController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/web/FavoriteController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/web/LogoutController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/web/LogoutController.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/web/PinController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/web/PinController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/web/UserController.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/web/dto/UserDto.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pinterest-frontend/src/app/add-pin/add-pin.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../pinterest-frontend/src/app/add-pin/add-pin.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pinterest-frontend/src/app/add-pin/add-pin.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../pinterest-frontend/src/app/add-pin/add-pin.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pinterest-frontend/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../pinterest-frontend/src/app/app-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pinterest-frontend/src/app/app.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../pinterest-frontend/src/app/app.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pinterest-frontend/src/app/callback/callback.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../pinterest-frontend/src/app/callback/callback.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pinterest-frontend/src/app/header/header.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../pinterest-frontend/src/app/header/header.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pinterest-frontend/src/app/header/header.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../pinterest-frontend/src/app/header/header.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pinterest-frontend/src/app/login/login.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../pinterest-frontend/src/app/login/login.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pinterest-frontend/src/app/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../pinterest-frontend/src/app/login/login.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pinterest-frontend/src/app/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../pinterest-frontend/src/app/login/login.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pinterest-frontend/src/app/model/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../pinterest-frontend/src/app/model/user.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pinterest-frontend/src/app/my-pins/my-pins.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../pinterest-frontend/src/app/my-pins/my-pins.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pinterest-frontend/src/app/my-pins/my-pins.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../pinterest-frontend/src/app/my-pins/my-pins.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pinterest-frontend/src/app/my-pins/my-pins.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../pinterest-frontend/src/app/my-pins/my-pins.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pinterest-frontend/src/app/pin-details/pin-details.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../pinterest-frontend/src/app/pin-details/pin-details.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pinterest-frontend/src/app/pin-details/pin-details.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../pinterest-frontend/src/app/pin-details/pin-details.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pinterest-frontend/src/app/pin-details/pin-details.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../pinterest-frontend/src/app/pin-details/pin-details.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pinterest-frontend/src/app/pinboard/pinboard.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../pinterest-frontend/src/app/pinboard/pinboard.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pinterest-frontend/src/app/pinboard/pinboard.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../pinterest-frontend/src/app/pinboard/pinboard.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pinterest-frontend/src/app/pinboard/pinboard.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../pinterest-frontend/src/app/pinboard/pinboard.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pinterest-frontend/src/app/services/pin.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../pinterest-frontend/src/app/services/pin.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pinterest-frontend/src/app/services/security.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../pinterest-frontend/src/app/services/security.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pinterest-frontend/src/app/services/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../pinterest-frontend/src/app/services/user.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pinterest-frontend/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../pinterest-frontend/src/index.html" afterDir="false" />
     </list>
-    <list id="e1e74f49-ecb8-4f02-9dda-fc7801f0abe8" name="Changes by anadavcheva" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/config/InMemoryRequestRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/config/InMemoryRequestRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/config/SecurityConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/config/SecurityConfig.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/config/TokenFilter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/config/TokenFilter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/config/TokenStore.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/config/TokenStore.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/repository/FavoriteJpaRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/repository/FavoriteJpaRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/service/PinService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/service/PinService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/service/UserService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/service/UserService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/service/impl/PinServiceImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/service/impl/PinServiceImpl.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/service/impl/UserServiceImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/service/impl/UserServiceImpl.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/web/FavoriteController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/web/FavoriteController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/web/LogoutController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/web/LogoutController.kt" afterDir="false" />
-    </list>
+    <list id="e1e74f49-ecb8-4f02-9dda-fc7801f0abe8" name="Changes by anadavcheva" comment="" />
     <list id="6034a21f-9fa0-4d94-ab24-f82b1a823a4c" name="Changes by retina" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,115 +114,6 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/config/TokenFilter.kt">
-      <ranges>
-        <range start1="14" end1="15" start2="14" end2="15" changelist="8f1ae284-b271-4351-9991-a9c35b853ea5" />
-        <range start1="22" end1="27" start2="22" end2="27" changelist="e1e74f49-ecb8-4f02-9dda-fc7801f0abe8" />
-        <range start1="30" end1="31" start2="30" end2="31" changelist="e1e74f49-ecb8-4f02-9dda-fc7801f0abe8" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/config/InMemoryRequestRepository.kt">
-      <ranges>
-        <range start1="9" end1="10" start2="9" end2="10" changelist="8f1ae284-b271-4351-9991-a9c35b853ea5" />
-        <range start1="12" end1="14" start2="12" end2="14" changelist="e1e74f49-ecb8-4f02-9dda-fc7801f0abe8" />
-        <range start1="24" end1="25" start2="24" end2="25" changelist="e1e74f49-ecb8-4f02-9dda-fc7801f0abe8" />
-        <range start1="35" end1="38" start2="35" end2="35" changelist="8f1ae284-b271-4351-9991-a9c35b853ea5" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/service/UserService.kt">
-      <ranges>
-        <range start1="3" end1="6" start2="3" end2="3" changelist="e1e74f49-ecb8-4f02-9dda-fc7801f0abe8" />
-        <range start1="8" end1="9" start2="5" end2="8" changelist="8f1ae284-b271-4351-9991-a9c35b853ea5" />
-        <range start1="10" end1="11" start2="9" end2="10" changelist="e1e74f49-ecb8-4f02-9dda-fc7801f0abe8" />
-        <range start1="12" end1="13" start2="11" end2="12" changelist="e1e74f49-ecb8-4f02-9dda-fc7801f0abe8" />
-        <range start1="14" end1="15" start2="13" end2="14" changelist="8f1ae284-b271-4351-9991-a9c35b853ea5" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/service/PinService.kt">
-      <ranges>
-        <range start1="4" end1="5" start2="4" end2="4" changelist="e1e74f49-ecb8-4f02-9dda-fc7801f0abe8" />
-        <range start1="6" end1="8" start2="5" end2="5" changelist="e1e74f49-ecb8-4f02-9dda-fc7801f0abe8" />
-        <range start1="11" end1="11" start2="8" end2="12" changelist="8f1ae284-b271-4351-9991-a9c35b853ea5" />
-        <range start1="13" end1="18" start2="14" end2="15" changelist="8f1ae284-b271-4351-9991-a9c35b853ea5" />
-        <range start1="21" end1="23" start2="18" end2="18" changelist="8f1ae284-b271-4351-9991-a9c35b853ea5" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/web/LogoutController.kt">
-      <ranges>
-        <range start1="3" end1="4" start2="3" end2="3" changelist="e1e74f49-ecb8-4f02-9dda-fc7801f0abe8" />
-        <range start1="7" end1="8" start2="6" end2="6" changelist="e1e74f49-ecb8-4f02-9dda-fc7801f0abe8" />
-        <range start1="18" end1="20" start2="16" end2="17" changelist="8f1ae284-b271-4351-9991-a9c35b853ea5" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/web/FavoriteController.kt">
-      <ranges>
-        <range start1="4" end1="5" start2="4" end2="4" changelist="e1e74f49-ecb8-4f02-9dda-fc7801f0abe8" />
-        <range start1="6" end1="8" start2="5" end2="5" changelist="e1e74f49-ecb8-4f02-9dda-fc7801f0abe8" />
-        <range start1="15" end1="16" start2="12" end2="12" changelist="8f1ae284-b271-4351-9991-a9c35b853ea5" />
-        <range start1="19" end1="22" start2="15" end2="18" changelist="8f1ae284-b271-4351-9991-a9c35b853ea5" />
-        <range start1="29" end1="31" start2="25" end2="27" changelist="8f1ae284-b271-4351-9991-a9c35b853ea5" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/config/TokenStore.kt">
-      <ranges>
-        <range start1="3" end1="4" start2="3" end2="3" changelist="8f1ae284-b271-4351-9991-a9c35b853ea5" />
-        <range start1="10" end1="11" start2="9" end2="10" changelist="e1e74f49-ecb8-4f02-9dda-fc7801f0abe8" />
-        <range start1="14" end1="16" start2="13" end2="16" changelist="8f1ae284-b271-4351-9991-a9c35b853ea5" />
-        <range start1="17" end1="19" start2="17" end2="20" changelist="8f1ae284-b271-4351-9991-a9c35b853ea5" />
-        <range start1="20" end1="21" start2="21" end2="22" changelist="8f1ae284-b271-4351-9991-a9c35b853ea5" />
-        <range start1="23" end1="24" start2="24" end2="25" changelist="8f1ae284-b271-4351-9991-a9c35b853ea5" />
-        <range start1="31" end1="33" start2="32" end2="33" changelist="e1e74f49-ecb8-4f02-9dda-fc7801f0abe8" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/config/SecurityConfig.kt">
-      <ranges>
-        <range start1="10" end1="11" start2="10" end2="10" changelist="e1e74f49-ecb8-4f02-9dda-fc7801f0abe8" />
-        <range start1="20" end1="22" start2="19" end2="19" changelist="8f1ae284-b271-4351-9991-a9c35b853ea5" />
-        <range start1="30" end1="32" start2="27" end2="28" changelist="8f1ae284-b271-4351-9991-a9c35b853ea5" />
-        <range start1="34" end1="35" start2="30" end2="31" changelist="e1e74f49-ecb8-4f02-9dda-fc7801f0abe8" />
-        <range start1="45" end1="47" start2="41" end2="43" changelist="e1e74f49-ecb8-4f02-9dda-fc7801f0abe8" />
-        <range start1="49" end1="54" start2="45" end2="45" changelist="8f1ae284-b271-4351-9991-a9c35b853ea5" />
-        <range start1="56" end1="61" start2="47" end2="52" changelist="8f1ae284-b271-4351-9991-a9c35b853ea5" />
-        <range start1="62" end1="64" start2="53" end2="55" changelist="8f1ae284-b271-4351-9991-a9c35b853ea5" />
-        <range start1="66" end1="75" start2="57" end2="57" changelist="8f1ae284-b271-4351-9991-a9c35b853ea5" />
-        <range start1="78" end1="79" start2="60" end2="61" changelist="e1e74f49-ecb8-4f02-9dda-fc7801f0abe8" />
-        <range start1="83" end1="86" start2="65" end2="72" changelist="8f1ae284-b271-4351-9991-a9c35b853ea5" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/service/impl/UserServiceImpl.kt">
-      <ranges>
-        <range start1="6" end1="7" start2="6" end2="6" changelist="e1e74f49-ecb8-4f02-9dda-fc7801f0abe8" />
-        <range start1="9" end1="9" start2="8" end2="9" changelist="8f1ae284-b271-4351-9991-a9c35b853ea5" />
-        <range start1="15" end1="16" start2="15" end2="17" changelist="e1e74f49-ecb8-4f02-9dda-fc7801f0abe8" />
-        <range start1="17" end1="17" start2="18" end2="22" changelist="8f1ae284-b271-4351-9991-a9c35b853ea5" />
-        <range start1="19" end1="20" start2="24" end2="25" changelist="8f1ae284-b271-4351-9991-a9c35b853ea5" />
-        <range start1="24" end1="25" start2="29" end2="29" changelist="e1e74f49-ecb8-4f02-9dda-fc7801f0abe8" />
-        <range start1="26" end1="31" start2="30" end2="33" changelist="8f1ae284-b271-4351-9991-a9c35b853ea5" />
-        <range start1="33" end1="36" start2="35" end2="38" changelist="8f1ae284-b271-4351-9991-a9c35b853ea5" />
-        <range start1="37" end1="38" start2="39" end2="40" changelist="8f1ae284-b271-4351-9991-a9c35b853ea5" />
-        <range start1="40" end1="41" start2="42" end2="42" changelist="8f1ae284-b271-4351-9991-a9c35b853ea5" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/service/impl/PinServiceImpl.kt">
-      <ranges>
-        <range start1="6" end1="7" start2="6" end2="6" changelist="e1e74f49-ecb8-4f02-9dda-fc7801f0abe8" />
-        <range start1="8" end1="9" start2="7" end2="7" changelist="e1e74f49-ecb8-4f02-9dda-fc7801f0abe8" />
-        <range start1="18" end1="19" start2="16" end2="16" changelist="8f1ae284-b271-4351-9991-a9c35b853ea5" />
-        <range start1="30" end1="32" start2="27" end2="29" changelist="8f1ae284-b271-4351-9991-a9c35b853ea5" />
-        <range start1="34" end1="36" start2="31" end2="33" changelist="8f1ae284-b271-4351-9991-a9c35b853ea5" />
-        <range start1="42" end1="43" start2="39" end2="39" changelist="8f1ae284-b271-4351-9991-a9c35b853ea5" />
-        <range start1="45" end1="49" start2="41" end2="41" changelist="8f1ae284-b271-4351-9991-a9c35b853ea5" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/repository/FavoriteJpaRepository.kt">
-      <ranges>
-        <range start1="4" end1="7" start2="4" end2="4" changelist="e1e74f49-ecb8-4f02-9dda-fc7801f0abe8" />
-        <range start1="9" end1="10" start2="6" end2="6" changelist="e1e74f49-ecb8-4f02-9dda-fc7801f0abe8" />
-        <range start1="18" end1="29" start2="14" end2="15" changelist="8f1ae284-b271-4351-9991-a9c35b853ea5" />
-      </ranges>
-    </file>
-  </component>
   <component name="ProjectId" id="1sslQJvIaj4PETc4gztpupNZKxk" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -334,7 +141,123 @@
       <recent name="$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/config/temp" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Gradle.FavoriteServiceTest">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FavoriteServiceTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;com.sorsix.pinterestclone.service.FavoriteServiceTest&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="FavoriteServiceTest.trying to get favorite by pin id" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;com.sorsix.pinterestclone.service.FavoriteServiceTest.trying to get favorite by pin id&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="FavoriteServiceTest.trying to save favorite with user that doesn't exist" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;com.sorsix.pinterestclone.service.FavoriteServiceTest.trying to save favorite with user that doesn't exist&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="PinServiceTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;com.sorsix.pinterestclone.service.PinServiceTest&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="PinServiceTest.trying to find pin by given createdBy id" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;com.sorsix.pinterestclone.service.PinServiceTest.trying to find pin by given createdBy id&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <configuration name="PinterestCloneApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="pinterest-clone.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.sorsix.pinterestclone.PinterestCloneApplication" />
@@ -342,6 +265,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.FavoriteServiceTest" />
+        <item itemvalue="Gradle.PinServiceTest" />
+        <item itemvalue="Gradle.PinServiceTest.trying to find pin by given createdBy id" />
+        <item itemvalue="Gradle.FavoriteServiceTest.trying to get favorite by pin id" />
+        <item itemvalue="Gradle.FavoriteServiceTest.trying to save favorite with user that doesn't exist" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -370,6 +302,7 @@
       <workItem from="1622222424065" duration="7948000" />
       <workItem from="1622298655478" duration="306000" />
       <workItem from="1622298969739" duration="9106000" />
+      <workItem from="1622387305324" duration="4542000" />
     </task>
     <servers />
   </component>
@@ -392,14 +325,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/config/SecurityConfig.kt</url>
-          <line>60</line>
-          <option name="timeStamp" value="77" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/com/sorsix/pinterestclone/config/SecurityConfig.kt</url>
-          <line>48</line>
-          <option name="timeStamp" value="81" />
+          <url>file://$PROJECT_DIR$/src/test/kotlin/com/sorsix/pinterestclone/service/PinServiceTest.kt</url>
+          <line>24</line>
+          <option name="timeStamp" value="82" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -25,7 +25,7 @@ class PinServiceImpl(
             .orElseThrow { PinNotFoundException(String.format("Pin with id %d is not found", id)) }
     }
 
-    override fun findAllByUserId(id: Int): List<Pin> {
+    override fun findAllByCreatedById(id: Int): List<Pin> {
         return repository.findAllByCreatedById(id)
     }
 

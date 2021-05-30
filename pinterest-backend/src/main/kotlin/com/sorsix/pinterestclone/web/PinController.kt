@@ -28,7 +28,7 @@ class PinController(
     @GetMapping("/my-pins")
     fun listMyPins(@AuthenticationPrincipal principal: OAuth2User): List<Pin> {
         val userId: Int = principal.attributes["id"] as Int
-        return pinService.findAllByUserId(userId)
+        return pinService.findAllByCreatedById(userId)
     }
 
     @GetMapping("/{id}")

@@ -18,7 +18,7 @@ export class PinService {
     return this.http.get<PinModel>(`/api/pins/${id}`)
   }
 
-  getMyPins() : Observable<PinModel[]> {
+  getMyPins(): Observable<PinModel[]> {
     return this.http.get<PinModel[]>("/api/pins/my-pins");
   }
 

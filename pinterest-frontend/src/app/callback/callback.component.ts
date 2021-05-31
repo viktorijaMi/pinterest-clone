@@ -1,6 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, Router} from "@angular/router";
-import {SecurityService} from "../services/security.service";
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from "@angular/router";
+import { SecurityService } from "../services/security.service";
 
 @Component({
   selector: 'app-callback',
@@ -10,8 +10,8 @@ import {SecurityService} from "../services/security.service";
 export class CallbackComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
-              private router: Router,
-              private securityService: SecurityService) {
+    private router: Router,
+    private securityService: SecurityService) {
   }
 
   ngOnInit(): void {

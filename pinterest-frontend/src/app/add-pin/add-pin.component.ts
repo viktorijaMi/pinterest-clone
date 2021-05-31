@@ -10,6 +10,8 @@ import { FormBuilder } from '@angular/forms';
 })
 export class AddPinComponent implements OnInit {
 
+  formError: string | undefined
+
   checkoutForm = this.formBuilder.group({
     description: '',
     url: ''
@@ -23,10 +25,17 @@ export class AddPinComponent implements OnInit {
   }
 
   onSubmit() {
+    this.formError = undefined
     this.service.addPin(this.checkoutForm.value['description'], this.checkoutForm.value['url']).subscribe(
       (result) => {
         this.checkoutForm.reset();
         this.router.navigate(['/my-pins']);
+      },
+      (error) => {
+        if (error.error) {
+          console.log("Error message: ", error.error.message)
+          this.formError = error.error.message;
+        }
       }
     )
   }

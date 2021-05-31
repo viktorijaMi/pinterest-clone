@@ -3,7 +3,7 @@ import { FavoriteModel } from '../model/favorite';
 import { PinModel } from '../model/pin';
 import { FavoriteService } from '../services/favorite.service';
 import { PinService } from '../services/pin.service';
-
+import { SecurityService } from '../services/security.service'
 @Component({
   selector: 'app-pin-details',
   templateUrl: './pin-details.component.html',
@@ -16,16 +16,11 @@ export class PinDetailsComponent implements OnInit {
   favorites: FavoriteModel[] = []
 
   constructor(private pinService: PinService,
-              private favoriteService: FavoriteService) { }
+    private favoriteService: FavoriteService,
+    public securityService: SecurityService) { }
 
   ngOnInit(): void {
     this.loadPin()
-  }
-
-  loadFavorites(){
-    this.favoriteService.getAllFavoritesByPinId(this.pin.id).subscribe((result) => {
-      this.favorites = result
-    })
   }
 
   loadPin() {

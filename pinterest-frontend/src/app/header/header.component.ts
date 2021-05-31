@@ -15,9 +15,10 @@ export class HeaderComponent implements OnInit {
   }
 
   logout() {
-    this.securityService.logout() .subscribe(() => {
+    this.securityService.logout().subscribe(() => {
       this.securityService.removeToken();
       this.router.navigate(['/login']);
     });
+
   }
 }

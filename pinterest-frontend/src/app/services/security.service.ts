@@ -1,6 +1,6 @@
-import {Injectable} from '@angular/core';
-import {Observable} from "rxjs";
-import {HttpClient} from "@angular/common/http";
+import { Injectable } from '@angular/core';
+import { Observable } from "rxjs";
+import { HttpClient } from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
@@ -19,11 +19,11 @@ export class SecurityService {
     window.open(this.baseUrl + this.authorizeEndpoint, '_self')
   }
 
-  updateToken(token: string){
+  updateToken(token: string) {
     localStorage.setItem(this.tokenKey, token);
   }
 
-  fetchToken(code: string, state: string) : Observable<any> {
+  fetchToken(code: string, state: string): Observable<any> {
     return this.http.get(this.baseUrl + this.tokenEndpoint + '?code=' + code + '&state=' + state);
   }
 

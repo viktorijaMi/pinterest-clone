@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PinService } from '../services/pin.service';
-import {PinModel} from '../model/pin';
+import { PinModel } from '../model/pin';
 
 
 @Component({
@@ -25,7 +25,7 @@ export class MyPinsComponent implements OnInit {
   }
 
   onDelete(id: number) {
-    this.pinService.deletePin(id).subscribe(() =>{
+    this.pinService.deletePin(id).subscribe(() => {
       this.loadMyPins()
     });
   }

@@ -2,6 +2,7 @@ package com.sorsix.pinterestclone.web
 
 import com.sorsix.pinterestclone.domain.Pin
 import com.sorsix.pinterestclone.domain.User
+import com.sorsix.pinterestclone.exceptions.BadRequestException
 import com.sorsix.pinterestclone.exceptions.PinNotFoundException
 import com.sorsix.pinterestclone.service.FavoriteService
 import com.sorsix.pinterestclone.service.PinService

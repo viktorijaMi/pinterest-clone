@@ -1,7 +1,7 @@
 <div class="container">
   <div class="box" *ngFor="let pin of pins">
     <app-pin-details [pin]="pin"></app-pin-details>
-    <button type="button" (click)="onDelete(pin.id)">DELETE</button>
+    <button style="float: right;" class="btn-danger" type="button" (click)="onDelete(pin.id)"><i
+        class="fa fa-trash"></i></button>
   </div>
 </div>
-

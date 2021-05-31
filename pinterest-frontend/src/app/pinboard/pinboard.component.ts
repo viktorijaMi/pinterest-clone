@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { PinService } from '../services/pin.service';
 import { PinModel } from '../model/pin';
 
+
 @Component({
   selector: 'app-pinboard',
   templateUrl: './pinboard.component.html',
@@ -13,9 +14,7 @@ export class PinboardComponent implements OnInit {
   pins: PinModel[] = []
 
   constructor(private pinService: PinService,
-              private router: Router) {
-    // this.router.routeReuseStrategy.shouldReuseRoute = () => false;
-  }
+    private router: Router) { }
 
   ngOnInit(): void {
     this.loadAllPins()
@@ -26,5 +25,5 @@ export class PinboardComponent implements OnInit {
       .subscribe((result: PinModel[]) => {
         this.pins = result;
       });
-    }
+  }
 }

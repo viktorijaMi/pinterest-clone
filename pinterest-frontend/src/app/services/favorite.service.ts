@@ -10,7 +10,7 @@ export class FavoriteService {
 
   constructor(private http: HttpClient) { }
 
-  getAllFavoritesByPinId(id: number) : Observable<FavoriteModel[]> {
+  getAllFavoritesByPinId(id: number): Observable<FavoriteModel[]> {
     return this.http.get<FavoriteModel[]>(`/api/favorites/${id}`)
   }
 

@@ -1,47 +1,27 @@
-<!-- <img class="pin-img" src="{{ pin.url }}" alt="Pin image">
-<div>
-    <p class="pin-title">{{ pin.description }}</p>
-    <div style="background-color: lightgray; justify-content: space-between;">
-        <img style="width:50px; height:50px;" src="{{pin.createdBy.avatarUrl}}" alt="Avatar image">
-        <p style="float: right;" class="pin-detail">{{ pin.createdBy.username }}</p>
-    </div>
-    <p class="card-text">
-        <small class="text-muted">< class="far fa-heart"></p>
-      <p class="pin-detail">{{ pin.numFavorites }}</p>
-      <i class="far fa-user"></i>
-      <p style="float: right;" class="pin-detail">{{ pin.createdBy.username }}</p>
-      <button type="button" (click)="onFavorite()"><i class="fa fa-lg fa-star" (click)="onFavorite()"></i></button>
-    </small>
-    </p>
-    <button type="button" (click)="onFavorite()"><i class="fa fa-lg fa-star" (click)="onFavorite()"></i></button>
-    <span class="glyphicon glyphicon-hourglass c-hide" aria-hidden="true"></span>
-    <p class="pin-detail">{{ pin.numFavorites }}</p>
-</div> -->
-
-
 <img class="pin-img" src="{{ pin.url }}" alt="Pin image">
 <div>
-    <div class="col justify-content-center">
-      <p class="card-text text-muted btn-sm">{{ pin.description }}</p>
-    </div>
-    <div class="card-text col-lg-12">
-      <div class="row">
-          <div class="col-sm-4">
-              <div>
-                <img class="img-responsive" style="width:50px; height:50px;" src="{{pin.createdBy.avatarUrl}}" alt="Avatar image">
-              </div>
-          </div>
-          <div class="col-sm-4">
-            <small class="text-muted btn-sm">
-              <i class="far fa-user"></i>
-              <p>{{pin.createdBy.username}}</p>
-            </small>
-          </div>
-          <div class="col-sm-4">
-            <button type="button" (click)="onFavorite()"><i class="far fa-heart" (click)="onFavorite()"></i>
-              {{pin.numFavorites}}</button>
-          </div>
+  <div class="card-text btn-sm text-xl-center">
+    <h5>{{ pin.description }}</h5>
+  </div>
+  <div class="card-text col-lg-15">
+    <div class="row">
+      <div class="col-sm-5">
+        <div>
+          <img class="img-responsive" style="width:50px; height:50px;" src="{{pin.createdBy.avatarUrl}}"
+            alt="Avatar image">
+        </div>
+      </div>
+      <div class="col-sm-5">
+        <small class="text-muted btn-sm">
+          <i class="far fa-user"></i>
+          <p>{{pin.createdBy.username}}</p>
+        </small>
+      </div>
+      <div class="col-sm-5">
+        <button *ngIf="securityService.isLoggedIn() == true" type="button" (click)="onFavorite()"><i
+            class="far fa-heart" (click)="onFavorite()"></i>
+          {{pin.numFavorites}}</button>
       </div>
     </div>
-
+  </div>
 </div>

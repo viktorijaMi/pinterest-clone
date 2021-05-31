@@ -1,11 +1,9 @@
 .container {
-  width: 1200px;
   margin: 20px auto;
   columns: 4;
   column-gap: 15px;
 }
 .container .box {
-  width: 100%;
   margin: 0 0 20px;
   padding: 10px;
   background:whitesmoke;
